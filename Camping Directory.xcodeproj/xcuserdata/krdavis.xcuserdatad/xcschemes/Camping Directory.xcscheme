@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E17ED4CF1D8EF14C00F188FD"
+               BuildableName = "Camping Directory.app"
+               BlueprintName = "Camping Directory"
+               ReferencedContainer = "container:Camping Directory.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E17ED4E71D8EF14C00F188FD"
+               BuildableName = "Camping DirectoryTests.xctest"
+               BlueprintName = "Camping DirectoryTests"
+               ReferencedContainer = "container:Camping Directory.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E17ED4F21D8EF14C00F188FD"
+               BuildableName = "Camping DirectoryUITests.xctest"
+               BlueprintName = "Camping DirectoryUITests"
+               ReferencedContainer = "container:Camping Directory.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E17ED4CF1D8EF14C00F188FD"
+            BuildableName = "Camping Directory.app"
+            BlueprintName = "Camping Directory"
+            ReferencedContainer = "container:Camping Directory.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E17ED4CF1D8EF14C00F188FD"
+            BuildableName = "Camping Directory.app"
+            BlueprintName = "Camping Directory"
+            ReferencedContainer = "container:Camping Directory.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E17ED4CF1D8EF14C00F188FD"
+            BuildableName = "Camping Directory.app"
+            BlueprintName = "Camping Directory"
+            ReferencedContainer = "container:Camping Directory.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
