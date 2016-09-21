@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D2A77C41B2B0C2648B22BF5 /* Pods_Camping_DirectoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE44F2176CABCDB906A3C41 /* Pods_Camping_DirectoryUITests.framework */; };
 		E17ED4D41D8EF14C00F188FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D31D8EF14C00F188FD /* AppDelegate.swift */; };
 		E17ED4D61D8EF14C00F188FD /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D51D8EF14C00F188FD /* RootViewController.swift */; };
 		E17ED4D81D8EF14C00F188FD /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D71D8EF14C00F188FD /* DataViewController.swift */; };
@@ -17,6 +18,9 @@
 		E17ED4ED1D8EF14C00F188FD /* Camping_DirectoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4EC1D8EF14C00F188FD /* Camping_DirectoryTests.swift */; };
 		E17ED4F81D8EF14C00F188FD /* Camping_DirectoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4F71D8EF14C00F188FD /* Camping_DirectoryUITests.swift */; };
 		E17ED5061D8EF26800F188FD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17ED5051D8EF26800F188FD /* MapKit.framework */; };
+		E1BE16891D91A1FE00338254 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BE16881D91A1FE00338254 /* Constants.swift */; };
+		E4E4CEAEFF67830BB4DF89E4 /* Pods_Camping_DirectoryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD7C4781916963F238444E5 /* Pods_Camping_DirectoryTests.framework */; };
+		F3F455C6B0393044060EFB10 /* Pods_Camping_Directory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D9918873325656D4C00912 /* Pods_Camping_Directory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		012BD36C67042D3F7D368B9E /* Pods-Camping DirectoryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camping DirectoryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camping DirectoryTests/Pods-Camping DirectoryTests.release.xcconfig"; sourceTree = "<group>"; };
+		146E6A2A8D648EC3900CD111 /* Pods-Camping Directory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camping Directory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camping Directory/Pods-Camping Directory.debug.xcconfig"; sourceTree = "<group>"; };
+		1CE44F2176CABCDB906A3C41 /* Pods_Camping_DirectoryUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camping_DirectoryUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6611D9C29A13F964984C2AAC /* Pods-Camping DirectoryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camping DirectoryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camping DirectoryUITests/Pods-Camping DirectoryUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		92D9918873325656D4C00912 /* Pods_Camping_Directory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camping_Directory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BB98E0EC9E9535652FF8D4E /* Pods-Camping DirectoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camping DirectoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camping DirectoryTests/Pods-Camping DirectoryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A461726DFD8528AF113AC149 /* Pods-Camping DirectoryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camping DirectoryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camping DirectoryUITests/Pods-Camping DirectoryUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E17ED4D01D8EF14C00F188FD /* Camping Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Camping Directory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17ED4D31D8EF14C00F188FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17ED4D51D8EF14C00F188FD /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +64,9 @@
 		E17ED4F71D8EF14C00F188FD /* Camping_DirectoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camping_DirectoryUITests.swift; sourceTree = "<group>"; };
 		E17ED4F91D8EF14C00F188FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E17ED5051D8EF26800F188FD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		E1BE16881D91A1FE00338254 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EAD7C4781916963F238444E5 /* Pods_Camping_DirectoryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camping_DirectoryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAEF9ED80B11707A41080CF4 /* Pods-Camping Directory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camping Directory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camping Directory/Pods-Camping Directory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E17ED5061D8EF26800F188FD /* MapKit.framework in Frameworks */,
+				F3F455C6B0393044060EFB10 /* Pods_Camping_Directory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4E4CEAEFF67830BB4DF89E4 /* Pods_Camping_DirectoryTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +91,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2A77C41B2B0C2648B22BF5 /* Pods_Camping_DirectoryUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4555EDEEA5A555EF4EA981D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				146E6A2A8D648EC3900CD111 /* Pods-Camping Directory.debug.xcconfig */,
+				EAEF9ED80B11707A41080CF4 /* Pods-Camping Directory.release.xcconfig */,
+				9BB98E0EC9E9535652FF8D4E /* Pods-Camping DirectoryTests.debug.xcconfig */,
+				012BD36C67042D3F7D368B9E /* Pods-Camping DirectoryTests.release.xcconfig */,
+				6611D9C29A13F964984C2AAC /* Pods-Camping DirectoryUITests.debug.xcconfig */,
+				A461726DFD8528AF113AC149 /* Pods-Camping DirectoryUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5ABBA4E7D72AC7C9867BC8D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92D9918873325656D4C00912 /* Pods_Camping_Directory.framework */,
+				EAD7C4781916963F238444E5 /* Pods_Camping_DirectoryTests.framework */,
+				1CE44F2176CABCDB906A3C41 /* Pods_Camping_DirectoryUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E17ED4C71D8EF14C00F188FD = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +129,8 @@
 				E17ED4EB1D8EF14C00F188FD /* Camping DirectoryTests */,
 				E17ED4F61D8EF14C00F188FD /* Camping DirectoryUITests */,
 				E17ED4D11D8EF14C00F188FD /* Products */,
+				4555EDEEA5A555EF4EA981D7 /* Pods */,
+				5ABBA4E7D72AC7C9867BC8D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +155,7 @@
 				E17ED4DE1D8EF14C00F188FD /* Assets.xcassets */,
 				E17ED4E01D8EF14C00F188FD /* LaunchScreen.storyboard */,
 				E17ED4E31D8EF14C00F188FD /* Info.plist */,
+				E1BE16881D91A1FE00338254 /* Constants.swift */,
 			);
 			path = "Camping Directory";
 			sourceTree = "<group>";
@@ -142,9 +185,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E17ED4FC1D8EF14C00F188FD /* Build configuration list for PBXNativeTarget "Camping Directory" */;
 			buildPhases = (
+				0AA74207CF5FDF3D46D31010 /* [CP] Check Pods Manifest.lock */,
 				E17ED4CC1D8EF14C00F188FD /* Sources */,
 				E17ED4CD1D8EF14C00F188FD /* Frameworks */,
 				E17ED4CE1D8EF14C00F188FD /* Resources */,
+				2C4DF80D0F339E6C6B611B92 /* [CP] Embed Pods Frameworks */,
+				BE9856C94792C3C1E118F841 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E17ED4FF1D8EF14C00F188FD /* Build configuration list for PBXNativeTarget "Camping DirectoryTests" */;
 			buildPhases = (
+				743E707E13C8CA691C30B0A2 /* [CP] Check Pods Manifest.lock */,
 				E17ED4E41D8EF14C00F188FD /* Sources */,
 				E17ED4E51D8EF14C00F188FD /* Frameworks */,
 				E17ED4E61D8EF14C00F188FD /* Resources */,
+				67F77CF33BD5677755A11411 /* [CP] Embed Pods Frameworks */,
+				9EF29756004164606F608CF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E17ED5021D8EF14C00F188FD /* Build configuration list for PBXNativeTarget "Camping DirectoryUITests" */;
 			buildPhases = (
+				2424AD13750EB044BF22DA26 /* [CP] Check Pods Manifest.lock */,
 				E17ED4EF1D8EF14C00F188FD /* Sources */,
 				E17ED4F01D8EF14C00F188FD /* Frameworks */,
 				E17ED4F11D8EF14C00F188FD /* Resources */,
+				D12789FFC551C27247FA5697 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,12 +249,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = ZuniSoft;
 				TargetAttributes = {
 					E17ED4CF1D8EF14C00F188FD = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = QYAYS38V6R;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -213,11 +265,13 @@
 					E17ED4E71D8EF14C00F188FD = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = QYAYS38V6R;
+						LastSwiftMigration = 0800;
 						TestTargetID = E17ED4CF1D8EF14C00F188FD;
 					};
 					E17ED4F21D8EF14C00F188FD = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = QYAYS38V6R;
+						LastSwiftMigration = 0800;
 						TestTargetID = E17ED4CF1D8EF14C00F188FD;
 					};
 				};
@@ -269,11 +323,135 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0AA74207CF5FDF3D46D31010 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2424AD13750EB044BF22DA26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2C4DF80D0F339E6C6B611B92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Camping Directory/Pods-Camping Directory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67F77CF33BD5677755A11411 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Camping DirectoryTests/Pods-Camping DirectoryTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		743E707E13C8CA691C30B0A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9EF29756004164606F608CF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Camping DirectoryTests/Pods-Camping DirectoryTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE9856C94792C3C1E118F841 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Camping Directory/Pods-Camping Directory-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D12789FFC551C27247FA5697 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Camping DirectoryUITests/Pods-Camping DirectoryUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E17ED4CC1D8EF14C00F188FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1BE16891D91A1FE00338254 /* Constants.swift in Sources */,
 				E17ED4D61D8EF14C00F188FD /* RootViewController.swift in Sources */,
 				E17ED4DA1D8EF14C00F188FD /* ModelController.swift in Sources */,
 				E17ED4D81D8EF14C00F188FD /* DataViewController.swift in Sources */,
@@ -346,8 +524,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -369,7 +549,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -392,8 +572,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -409,9 +591,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -419,72 +602,86 @@
 		};
 		E17ED4FD1D8EF14C00F188FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 146E6A2A8D648EC3900CD111 /* Pods-Camping Directory.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Camping Directory/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zunisoft.Camping-Directory";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		E17ED4FE1D8EF14C00F188FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAEF9ED80B11707A41080CF4 /* Pods-Camping Directory.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Camping Directory/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zunisoft.Camping-Directory";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		E17ED5001D8EF14C00F188FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BB98E0EC9E9535652FF8D4E /* Pods-Camping DirectoryTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Camping DirectoryTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zunisoft.Camping-DirectoryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Camping Directory.app/Camping Directory";
 			};
 			name = Debug;
 		};
 		E17ED5011D8EF14C00F188FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 012BD36C67042D3F7D368B9E /* Pods-Camping DirectoryTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Camping DirectoryTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zunisoft.Camping-DirectoryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Camping Directory.app/Camping Directory";
 			};
 			name = Release;
 		};
 		E17ED5031D8EF14C00F188FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6611D9C29A13F964984C2AAC /* Pods-Camping DirectoryUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Camping DirectoryUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zunisoft.Camping-DirectoryUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Camping Directory";
 			};
 			name = Debug;
 		};
 		E17ED5041D8EF14C00F188FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A461726DFD8528AF113AC149 /* Pods-Camping DirectoryUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Camping DirectoryUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zunisoft.Camping-DirectoryUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Camping Directory";
 			};
 			name = Release;
@@ -508,6 +705,7 @@
 				E17ED4FE1D8EF14C00F188FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E17ED4FF1D8EF14C00F188FD /* Build configuration list for PBXNativeTarget "Camping DirectoryTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +714,7 @@
 				E17ED5011D8EF14C00F188FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E17ED5021D8EF14C00F188FD /* Build configuration list for PBXNativeTarget "Camping DirectoryUITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +723,7 @@
 				E17ED5041D8EF14C00F188FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
