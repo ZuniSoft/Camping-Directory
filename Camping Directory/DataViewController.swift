@@ -44,12 +44,7 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /* Setup delegates */
-        tableView.delegate = self
-        tableView.dataSource = self
-        searchBar.delegate = self
-        
+        /*
         Alamofire.request(
             Constants.svcCampgroundURL,
             parameters: [
@@ -80,7 +75,7 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
             //print(xml["resultset"]["result"][1].element?.attribute(by: "facilityName")?.text)
             
         }
-        
+        */
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
