@@ -13,8 +13,8 @@ class NavigationController: UINavigationController, UIViewControllerTransitionin
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Status bar white font
-        self.navigationBar.barStyle = UIBarStyle.black
-        self.navigationBar.tintColor = UIColor.white
+        self.navigationBar.barTintColor = UIColor(red: 53.0/255.0, green: 78.0/255.0, blue: 91.0/255.0, alpha: 1.0)
+        self.navigationBar.tintColor = UIColor.lightText
+        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.lightText]
     }
 }

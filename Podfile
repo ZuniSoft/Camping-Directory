@@ -8,6 +8,7 @@ target 'Camping Directory' do
   # Pods for Camping Directory
   pod 'Alamofire'
   pod 'SWXMLHash'
+  pod 'AlamofireNetworkActivityIndicator'
 
   target 'Camping DirectoryTests' do
     inherit! :search_paths

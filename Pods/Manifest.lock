@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (4.0.1)
+  - AlamofireNetworkActivityIndicator (2.0.0):
+    - Alamofire (~> 4.0)
+  - SWXMLHash (3.0.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireNetworkActivityIndicator
+  - SWXMLHash
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireNetworkActivityIndicator: ba9f481748d954318dd99636abff028cd3fcdc07
+  SWXMLHash: e0f6935971f01b06fb228cf435510d998ecde647
+
+PODFILE CHECKSUM: 037858b9c2b6e4625eb3a6076f4578247d10d343
+
+COCOAPODS: 1.0.1

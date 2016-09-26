@@ -59,7 +59,7 @@ class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         var newSequeUrl = "Text"
         
         // Create a new variable to store the instance of SearchResultsViewController
-        let destinationVC = segue.destination as! SearchResultsViewController
+        let destinationVC = segue.destination as! SearchResultsController
         destinationVC.sequeUrl = newSequeUrl
     }
 }
