@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2D2A77C41B2B0C2648B22BF5 /* Pods_Camping_DirectoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE44F2176CABCDB906A3C41 /* Pods_Camping_DirectoryUITests.framework */; };
+		E1305D6A1D98AA3700370048 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1305D691D98AA3700370048 /* NavigationController.swift */; };
 		E17ED4D41D8EF14C00F188FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D31D8EF14C00F188FD /* AppDelegate.swift */; };
-		E17ED4D61D8EF14C00F188FD /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D51D8EF14C00F188FD /* RootViewController.swift */; };
-		E17ED4D81D8EF14C00F188FD /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D71D8EF14C00F188FD /* DataViewController.swift */; };
+		E17ED4D81D8EF14C00F188FD /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D71D8EF14C00F188FD /* SearchResultsViewController.swift */; };
 		E17ED4DA1D8EF14C00F188FD /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D91D8EF14C00F188FD /* ModelController.swift */; };
 		E17ED4DD1D8EF14C00F188FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17ED4DB1D8EF14C00F188FD /* Main.storyboard */; };
 		E17ED4DF1D8EF14C00F188FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E17ED4DE1D8EF14C00F188FD /* Assets.xcassets */; };
@@ -49,10 +49,10 @@
 		92D9918873325656D4C00912 /* Pods_Camping_Directory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camping_Directory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB98E0EC9E9535652FF8D4E /* Pods-Camping DirectoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camping DirectoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camping DirectoryTests/Pods-Camping DirectoryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A461726DFD8528AF113AC149 /* Pods-Camping DirectoryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camping DirectoryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camping DirectoryUITests/Pods-Camping DirectoryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E1305D691D98AA3700370048 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E17ED4D01D8EF14C00F188FD /* Camping Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Camping Directory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17ED4D31D8EF14C00F188FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E17ED4D51D8EF14C00F188FD /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		E17ED4D71D8EF14C00F188FD /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		E17ED4D71D8EF14C00F188FD /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		E17ED4D91D8EF14C00F188FD /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		E17ED4DC1D8EF14C00F188FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E17ED4DE1D8EF14C00F188FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,8 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				E17ED4D31D8EF14C00F188FD /* AppDelegate.swift */,
-				E17ED4D51D8EF14C00F188FD /* RootViewController.swift */,
-				E17ED4D71D8EF14C00F188FD /* DataViewController.swift */,
+				E17ED4D71D8EF14C00F188FD /* SearchResultsViewController.swift */,
 				E17ED4D91D8EF14C00F188FD /* ModelController.swift */,
 				E17ED4DB1D8EF14C00F188FD /* Main.storyboard */,
 				E17ED4DE1D8EF14C00F188FD /* Assets.xcassets */,
@@ -159,6 +158,7 @@
 				E17ED4E31D8EF14C00F188FD /* Info.plist */,
 				E1BE16881D91A1FE00338254 /* Constants.swift */,
 				E1F4C5EB1D933642006507E7 /* SearchController.swift */,
+				E1305D691D98AA3700370048 /* NavigationController.swift */,
 			);
 			path = "Camping Directory";
 			sourceTree = "<group>";
@@ -455,10 +455,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1BE16891D91A1FE00338254 /* Constants.swift in Sources */,
-				E17ED4D61D8EF14C00F188FD /* RootViewController.swift in Sources */,
 				E17ED4DA1D8EF14C00F188FD /* ModelController.swift in Sources */,
-				E17ED4D81D8EF14C00F188FD /* DataViewController.swift in Sources */,
+				E17ED4D81D8EF14C00F188FD /* SearchResultsViewController.swift in Sources */,
 				E17ED4D41D8EF14C00F188FD /* AppDelegate.swift in Sources */,
+				E1305D6A1D98AA3700370048 /* NavigationController.swift in Sources */,
 				E1F4C5EC1D933642006507E7 /* SearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

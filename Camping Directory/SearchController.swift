@@ -8,65 +8,58 @@
 
 import UIKit
 
-class SearchController: UIViewController {
-    /*
-    var pageData: [String] = []
-    var dataObject = ""
-    */
+class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    var pickerDataSource: [String] = Constants.stateList
+    
+    @IBOutlet weak var statePicker: UIPickerView!
+    @IBOutlet weak var petsAllowedSwitch: UISwitch!
+    @IBOutlet weak var searchButton: UIButton!
+    
+    @IBAction func searchButtonClicked(_ sender: UIButton) {
+        var petsAllowed = petsAllowedSwitch.isOn ? 0 : 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Connect data:
+        self.statePicker.dataSource = self;
+        self.statePicker.delegate = self;
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    // The number of columns of data.
+    func numberOfComponents(in statePicker: UIPickerView) -> Int {
+        return 1
+    }
     
-    /*
-    func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> SearchController? {
-        // Return the data view controller for the given index.
-        if (self.pageData.count == 0) || (index >= self.pageData.count) {
-            //return nil
-        }
+    // The number of rows of data.
+    func pickerView(_ statePicker: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerDataSource.count
+    }
+    
+    // The data to return for the row and component (column) that's being passed in.
+    func pickerView(_ statePicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerDataSource[row]
+    }
+    
+    // The row selected in the picker by the user.
+    private func pickerView(statePicker: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // Create a new view controller and pass suitable data.
-        let searchController = storyboard.instantiateViewController(withIdentifier: "SearchController") as! SearchController
-        //searchController.dataObject = self.pageData[index]
-        return searchController
-    }
-    
-    func indexOfViewController(_ viewController: SearchController) -> Int {
-        // Return the index of the given data view controller.
-        // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-        return 0 //pageData.index(of: viewController.dataObject) ?? NSNotFound
-    }
-    
-    // MARK: - Page View Controller Data Source
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as! SearchController)
-        if (index == 0) || (index == NSNotFound) {
-            return nil
-        }
+        // Create a variable that you want to send
+        var newSequeUrl = "Text"
         
-        index -= 1
-        return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        // Create a new variable to store the instance of SearchResultsViewController
+        let destinationVC = segue.destination as! SearchResultsViewController
+        destinationVC.sequeUrl = newSequeUrl
     }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        var index = self.indexOfViewController(viewController as! SearchController)
-        if index == NSNotFound {
-            return nil
-        }
-        
-        index += 1
-        if index == self.pageData.count {
-            return nil
-        }
-        return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
-    }
-    */
 }

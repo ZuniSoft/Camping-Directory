@@ -1,5 +1,5 @@
 //
-//  DataViewController.swift
+//  SearchResultsViewController.swift
 //  Camping Directory
 //
 //  Created by Keith Davis on 9/18/16.
@@ -10,7 +10,9 @@ import UIKit
 import Alamofire
 import SWXMLHash
 
-class DataViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+    
+    var sequeUrl : String?
     
     /*
     @IBOutlet weak var dataLabel: UILabel!
@@ -19,11 +21,6 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var dataObject: String = ""
 
     /*
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,6 +41,9 @@ class DataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let test = sequeUrl
+        
         /*
         Alamofire.request(
             Constants.svcCampgroundURL,

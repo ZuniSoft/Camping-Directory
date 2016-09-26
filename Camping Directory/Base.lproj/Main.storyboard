@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XzM-7q-ExF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,28 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="clB-vc-fyl">
-            <objects>
-                <viewController id="703-4V-yAM" customClass="RootViewController" customModule="Camping_Directory" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="I7W-xW-C47"/>
-                        <viewControllerLayoutGuide type="bottom" id="IfR-02-kHw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="502-Ir-ELC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.15686274509803921" green="0.23921568627450981" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1490" y="-223"/>
-        </scene>
-        <!--Data View Controller-->
+        <!--Search Results-->
         <scene sceneID="snT-py-3hH">
             <objects>
-                <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="DataViewController" customModule="Camping_Directory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DataViewController" title="Search Results" id="S4R-Ja-viH" customClass="SearchResultsViewController" customModule="Camping_Directory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fXf-Jd-eTc"/>
                         <viewControllerLayoutGuide type="bottom" id="EPS-s9-h4K"/>
@@ -37,37 +19,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="0XQ-SV-zW9">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="163" id="w9G-7t-Db0"/>
-                                </constraints>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="0XQ-SV-zW9"/>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="0XQ-SV-zW9" secondAttribute="trailing" id="TAW-wT-foO"/>
-                            <constraint firstItem="0XQ-SV-zW9" firstAttribute="top" secondItem="ZwX-cT-FIQ" secondAttribute="top" id="XPP-Uc-BvI"/>
-                            <constraint firstItem="0XQ-SV-zW9" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" id="o5T-TF-mQN"/>
-                            <constraint firstItem="0XQ-SV-zW9" firstAttribute="centerX" secondItem="ZwX-cT-FIQ" secondAttribute="centerX" id="yGV-3c-zgE"/>
+                            <constraint firstItem="0XQ-SV-zW9" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" id="de4-Uc-X0c"/>
+                            <constraint firstAttribute="trailing" secondItem="0XQ-SV-zW9" secondAttribute="trailing" id="gFs-ey-2Ah"/>
+                            <constraint firstItem="EPS-s9-h4K" firstAttribute="top" secondItem="0XQ-SV-zW9" secondAttribute="bottom" constant="418" id="kJE-A7-SVe"/>
+                            <constraint firstItem="0XQ-SV-zW9" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" constant="66" id="pCp-mo-sD5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qJb-YR-mli"/>
+                    <navigationItem key="navigationItem" title="Search Results" id="XBx-kV-2La"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="hNf-b4-CR3">
-                    <connections>
-                        <outlet property="delegate" destination="S4R-Ja-viH" id="J0h-8K-Ye4"/>
-                        <outlet property="searchContentsController" destination="S4R-Ja-viH" id="kFP-Tz-y6g"/>
-                        <outlet property="searchResultsDataSource" destination="S4R-Ja-viH" id="WyT-IM-obR"/>
-                        <outlet property="searchResultsDelegate" destination="S4R-Ja-viH" id="tHn-e9-RVm"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2782" y="-221"/>
+            <point key="canvasLocation" x="6719.1999999999998" y="-224.4377811094453"/>
         </scene>
         <!--Search Controller-->
         <scene sceneID="wec-KM-AGj">
             <objects>
-                <viewController storyboardIdentifier="SearchController" id="BbE-8H-DjH" userLabel="Search Controller" customClass="SearchController" customModule="Camping_Directory" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchController" title="Search Criteria" id="BbE-8H-DjH" userLabel="Search Controller" customClass="SearchController" customModule="Camping_Directory" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3J3-1h-Ne4"/>
                         <viewControllerLayoutGuide type="bottom" id="1WY-9Q-YKn"/>
@@ -76,63 +46,107 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-Gr-v2O">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="163" id="ov5-1l-PSL"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campsite Search Criteria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vr8-fJ-6Jp">
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZr-61-2tn">
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZr-61-2tn">
+                                <frame key="frameInset" minY="242" width="375" height="135"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="135" id="0pF-01-6b4"/>
+                                    <constraint firstAttribute="height" constant="135" id="JVk-e8-IhM"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="Tu9-ZC-Ihy" id="Ooe-Gm-La2"/>
+                                    <outlet property="delegate" destination="Tu9-ZC-Ihy" id="F8g-Re-DpQ"/>
+                                </connections>
                             </pickerView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IQW-Me-Yc8"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets Allowed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAu-Va-8Dq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQa-Yh-jJT">
+                                <frame key="frameInset" minY="377" width="375" height="233"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IQW-Me-Yc8" userLabel="Pets Allowed Switch"/>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DTn-mR-3ig"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pets Allowed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAu-Va-8Dq">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="yrB-tS-kK7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="mup-6p-HH3"/>
+                                    <constraint firstItem="IQW-Me-Yc8" firstAttribute="top" secondItem="uQa-Yh-jJT" secondAttribute="topMargin" id="19V-Sd-dfW"/>
+                                    <constraint firstAttribute="trailing" secondItem="hAu-Va-8Dq" secondAttribute="trailing" constant="200" id="2xv-gH-Yqc"/>
+                                    <constraint firstItem="IQW-Me-Yc8" firstAttribute="centerY" secondItem="hAu-Va-8Dq" secondAttribute="centerY" id="3um-sA-rXo"/>
+                                    <constraint firstItem="IQW-Me-Yc8" firstAttribute="leading" secondItem="DTn-mR-3ig" secondAttribute="leading" id="6Qz-Ne-ibH"/>
+                                    <constraint firstAttribute="bottom" secondItem="DTn-mR-3ig" secondAttribute="bottom" constant="161" id="hu5-Iy-Qbo"/>
+                                    <constraint firstItem="IQW-Me-Yc8" firstAttribute="leading" secondItem="uQa-Yh-jJT" secondAttribute="leadingMargin" id="iwP-Nz-NiS"/>
+                                    <constraint firstItem="hAu-Va-8Dq" firstAttribute="leading" secondItem="IQW-Me-Yc8" secondAttribute="trailing" constant="8" symbolic="YES" id="n5f-n7-Nbc"/>
+                                    <constraint firstItem="DTn-mR-3ig" firstAttribute="top" secondItem="IQW-Me-Yc8" secondAttribute="bottom" constant="8" symbolic="YES" id="tQ6-0D-Zww"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXL-D7-sOJ" userLabel="Search Button">
+                                <color key="backgroundColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="5Ah-8X-zkf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonClicked:" destination="BbE-8H-DjH" eventType="touchUpInside" id="MoA-4r-doE"/>
+                                    <segue destination="S4R-Ja-viH" kind="show" id="7eX-EE-ziv"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-Gr-v2O">
+                                <frame key="frameInset" minY="63" width="375" height="171"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="163" id="PSR-Ij-yQN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274510000001" green="0.23921568630000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="3ge-Gr-v2O" firstAttribute="top" secondItem="3J3-1h-Ne4" secondAttribute="bottom" id="0Mr-vJ-NJY"/>
-                            <constraint firstItem="Vr8-fJ-6Jp" firstAttribute="top" secondItem="3ge-Gr-v2O" secondAttribute="bottom" constant="8" symbolic="YES" id="7vr-hJ-gGd"/>
-                            <constraint firstItem="Vr8-fJ-6Jp" firstAttribute="centerX" secondItem="3ge-Gr-v2O" secondAttribute="centerX" id="Iei-Do-hQt"/>
-                            <constraint firstAttribute="trailing" secondItem="3ge-Gr-v2O" secondAttribute="trailing" id="Q1f-jy-fHy"/>
-                            <constraint firstItem="Vr8-fJ-6Jp" firstAttribute="leading" secondItem="Tu9-ZC-Ihy" secondAttribute="leadingMargin" constant="23" id="Viz-8n-EDJ"/>
-                            <constraint firstItem="YZr-61-2tn" firstAttribute="leading" secondItem="3ge-Gr-v2O" secondAttribute="leading" id="Ya0-jl-z08"/>
-                            <constraint firstItem="hAu-Va-8Dq" firstAttribute="centerY" secondItem="IQW-Me-Yc8" secondAttribute="centerY" id="nma-XD-2It"/>
-                            <constraint firstItem="3ge-Gr-v2O" firstAttribute="leading" secondItem="Tu9-ZC-Ihy" secondAttribute="leading" id="pVg-yt-VAP"/>
-                            <constraint firstItem="IQW-Me-Yc8" firstAttribute="top" secondItem="YZr-61-2tn" secondAttribute="bottom" constant="14" id="rQX-Sc-y71"/>
-                            <constraint firstItem="YZr-61-2tn" firstAttribute="top" secondItem="Vr8-fJ-6Jp" secondAttribute="bottom" constant="8" symbolic="YES" id="sIk-ah-TLh"/>
-                            <constraint firstItem="1WY-9Q-YKn" firstAttribute="top" secondItem="Vr8-fJ-6Jp" secondAttribute="bottom" constant="433" id="tVW-iP-zgU"/>
-                            <constraint firstItem="IQW-Me-Yc8" firstAttribute="leading" secondItem="Tu9-ZC-Ihy" secondAttribute="leadingMargin" id="xaT-cY-eFM"/>
-                            <constraint firstItem="hAu-Va-8Dq" firstAttribute="leading" secondItem="IQW-Me-Yc8" secondAttribute="trailing" constant="8" symbolic="YES" id="y4f-di-MYT"/>
-                            <constraint firstItem="YZr-61-2tn" firstAttribute="trailing" secondItem="3ge-Gr-v2O" secondAttribute="trailing" id="yU5-IO-STJ"/>
+                            <constraint firstItem="3ge-Gr-v2O" firstAttribute="leading" secondItem="Tu9-ZC-Ihy" secondAttribute="leading" id="5WM-pg-nUK"/>
+                            <constraint firstItem="1WY-9Q-YKn" firstAttribute="top" secondItem="VXL-D7-sOJ" secondAttribute="bottom" constant="8" symbolic="YES" id="65H-cP-AMj"/>
+                            <constraint firstItem="YZr-61-2tn" firstAttribute="trailing" secondItem="uQa-Yh-jJT" secondAttribute="trailing" id="aXJ-xe-VnH"/>
+                            <constraint firstItem="YZr-61-2tn" firstAttribute="leading" secondItem="uQa-Yh-jJT" secondAttribute="leading" id="dkn-o9-zbr"/>
+                            <constraint firstItem="YZr-61-2tn" firstAttribute="top" secondItem="3ge-Gr-v2O" secondAttribute="bottom" constant="8" symbolic="YES" id="fqK-WD-CEX"/>
+                            <constraint firstItem="VXL-D7-sOJ" firstAttribute="centerX" secondItem="Tu9-ZC-Ihy" secondAttribute="centerX" id="h8B-b7-ZTk"/>
+                            <constraint firstItem="3ge-Gr-v2O" firstAttribute="leading" secondItem="YZr-61-2tn" secondAttribute="leading" id="m8D-gc-yId"/>
+                            <constraint firstItem="3ge-Gr-v2O" firstAttribute="trailing" secondItem="YZr-61-2tn" secondAttribute="trailing" id="o3g-7O-okr"/>
+                            <constraint firstItem="uQa-Yh-jJT" firstAttribute="top" secondItem="YZr-61-2tn" secondAttribute="bottom" id="p47-hc-Qhw"/>
+                            <constraint firstAttribute="trailing" secondItem="3ge-Gr-v2O" secondAttribute="trailing" id="ulF-m8-oip"/>
+                            <constraint firstItem="VXL-D7-sOJ" firstAttribute="top" secondItem="uQa-Yh-jJT" secondAttribute="bottom" constant="13" id="wmT-hj-ycH"/>
+                            <constraint firstItem="3ge-Gr-v2O" firstAttribute="top" secondItem="Tu9-ZC-Ihy" secondAttribute="top" constant="63" id="xaI-Vk-ZIF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="o7l-JC-88a"/>
+                    <navigationItem key="navigationItem" title="Search Criteria" id="o7l-JC-88a"/>
+                    <connections>
+                        <outlet property="petsAllowedSwitch" destination="IQW-Me-Yc8" id="Lnn-PV-tRw"/>
+                        <outlet property="searchButton" destination="VXL-D7-sOJ" id="COG-ly-W1N"/>
+                        <outlet property="statePicker" destination="YZr-61-2tn" id="um0-ww-PsX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQh-nK-KYr" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="wyI-Gw-OaD">
-                    <connections>
-                        <outlet property="delegate" destination="BbE-8H-DjH" id="aht-SW-HUD"/>
-                        <outlet property="searchContentsController" destination="BbE-8H-DjH" id="Dl6-ql-t2g"/>
-                        <outlet property="searchResultsDataSource" destination="BbE-8H-DjH" id="ck4-dP-rcJ"/>
-                        <outlet property="searchResultsDelegate" destination="BbE-8H-DjH" id="20E-fU-NOs"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2141.5999999999999" y="-222.63868065967017"/>
+            <point key="canvasLocation" x="5967.1999999999998" y="-224.4377811094453"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ccu-99-JDx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XzM-7q-ExF" customClass="NavigationController" customModule="Camping_Directory" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T3q-3m-0BD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BbE-8H-DjH" kind="relationship" relationship="rootViewController" id="DMR-oD-Zed"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPD-0i-nC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5028" y="-224.4377811094453"/>
         </scene>
     </scenes>
     <resources>
