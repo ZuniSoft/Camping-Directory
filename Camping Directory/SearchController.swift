@@ -11,13 +11,13 @@ import UIKit
 class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var pickerDataSource: [String] = Constants.stateList
+    var statePickerValue: String = ""
     
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var petsAllowedSwitch: UISwitch!
     @IBOutlet weak var searchButton: UIButton!
     
     @IBAction func searchButtonClicked(_ sender: UIButton) {
-        var petsAllowed = petsAllowedSwitch.isOn ? 0 : 1
     }
     
     override func viewDidLoad() {
@@ -27,6 +27,9 @@ class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         // Connect data:
         self.statePicker.dataSource = self;
         self.statePicker.delegate = self;
+        
+        // Defaults
+        self.statePicker.selectedRow(inComponent: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,13 +53,30 @@ class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDe
     }
     
     // The row selected in the picker by the user.
-    private func pickerView(statePicker: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ statePicker: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        statePickerValue = Constants.stateDictionary[Constants.stateList[row]]!
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Create a variable that you want to send
-        var newSequeUrl = "Text"
+        var newSequeUrl : String
+        
+        // API url
+        newSequeUrl = Constants.svcCampgroundURL
+        
+        // API key
+        newSequeUrl += "?api_key=" + Constants.svcCampgroundAPIKey
+        
+        // State
+        newSequeUrl += "&pstate=" + statePickerValue
+        
+        // Pets allowed
+        let petsAllowedValue = petsAllowedSwitch.isOn ? 3010 : 0
+        if petsAllowedValue == 3010 {
+            newSequeUrl += "&pets=" + String(petsAllowedValue)
+        }
         
         // Create a new variable to store the instance of SearchResultsViewController
         let destinationVC = segue.destination as! SearchResultsController

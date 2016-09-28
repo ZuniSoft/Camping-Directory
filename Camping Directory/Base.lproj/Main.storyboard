@@ -31,11 +31,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jt5-SQ-THb" id="uBi-K7-TCf">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xM6-Xo-1Hv">
-                                                    <frame key="frameInset" minX="15" width="345" height="43"/>
+                                                    <frame key="frameInset" minX="15" width="345" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -43,6 +43,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Dds-CG-khN" kind="show" identifier="showDetail" id="KhR-90-a1z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -61,14 +64,39 @@
                             <constraint firstItem="KHQ-bP-YJY" firstAttribute="top" secondItem="0XQ-SV-zW9" secondAttribute="bottom" constant="1" id="ZGu-qO-vN9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Results" id="XBx-kV-2La"/>
+                    <navigationItem key="navigationItem" title="Results" id="XBx-kV-2La"/>
                     <connections>
                         <outlet property="tableView" destination="KHQ-bP-YJY" id="diA-hV-YoX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6750" y="-224"/>
+            <point key="canvasLocation" x="6838" y="-224"/>
+        </scene>
+        <!--Campground Detail-->
+        <scene sceneID="EB1-Jr-3bE">
+            <objects>
+                <viewController title="Campground Detail" id="Dds-CG-khN" customClass="DetailController" customModule="Camping_Directory" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1a8-7E-3E8"/>
+                        <viewControllerLayoutGuide type="bottom" id="gIs-6k-Lzw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0VZ-xu-MC5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XcS-mN-U8g">
+                                <frame key="frameInset" minX="56" minY="158" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="RZo-sT-pZK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G8W-hq-OPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7670" y="-224"/>
         </scene>
         <!--Search Controller-->
         <scene sceneID="wec-KM-AGj">
@@ -103,7 +131,7 @@
                                 </state>
                                 <connections>
                                     <action selector="searchButtonClicked:" destination="BbE-8H-DjH" eventType="touchUpInside" id="MoA-4r-doE"/>
-                                    <segue destination="S4R-Ja-viH" kind="show" id="7eX-EE-ziv"/>
+                                    <segue destination="S4R-Ja-viH" kind="show" id="tb9-uY-vpB"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="3ge-Gr-v2O">

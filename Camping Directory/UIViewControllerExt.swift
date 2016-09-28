@@ -1,0 +1,20 @@
+//
+//  UIViewControllerExt.swift
+//  Camping Directory
+//
+//  Created by Keith Davis on 9/28/16.
+//  Copyright © 2016 ZuniSoft. All rights reserved.
+//
+
+import UIKit
+
+extension UIViewController {
+    
+    func alert(message: String, title: String = "") {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+}

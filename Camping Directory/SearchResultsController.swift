@@ -1,5 +1,5 @@
 //
-//  SearchResultsViewController.swift
+//  SearchResultsController.swift
 //  Camping Directory
 //
 //  Created by Keith Davis on 9/18/16.
@@ -19,14 +19,10 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let searchUrl = sequeUrl
-        
-        var cnt : Int = 0
-        
-        loadData()
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        loadData(url: sequeUrl!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,17 +30,10 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
         // Dispose of any resources that can be recreated.
     }
     
-    func loadData() {
+    func loadData(url : String) {
         
-        Alamofire.request(
-            Constants.svcCampgroundURL,
-            parameters: [
-                "api_key": Constants.svcCampgroundAPIKey,
-                "pstate": "CO",
-                "pets": "3010"
-            ]
-            ).responseString { response in
-                switch response.result {
+        Alamofire.request(url).responseString { response in
+            switch response.result {
                 case .success:
                     let xml = SWXMLHash.parse(response.result.value!)
                     
@@ -55,12 +44,13 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
                             self.data.append(value!)
                         }
                     }
+                    
                     // Load the tableview
                     self.tableView.reloadData()
                 case .failure(let error):
-                    print(error)
-                }
+                    self.alert(message: error.localizedDescription)
             }
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,7 +65,11 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            print("You selected cell #\(indexPath.row)!")
+        
+        self.performSegue(withIdentifier: "showDetail", sender: indexPath);
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
 }
 
