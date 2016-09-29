@@ -9,7 +9,12 @@
 import UIKit
 
 class DetailController: UIViewController {
+    // Segue data
+    var sequeData : Data.SearchResult?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("FACILITY ID:" + (sequeData?.facilityId)!)
     }
 }

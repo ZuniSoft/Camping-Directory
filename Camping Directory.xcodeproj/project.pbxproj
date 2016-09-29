@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D2A77C41B2B0C2648B22BF5 /* Pods_Camping_DirectoryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE44F2176CABCDB906A3C41 /* Pods_Camping_DirectoryUITests.framework */; };
+		E11957841D9D749F00948FE2 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11957831D9D749F00948FE2 /* Data.swift */; };
+		E11957861D9D85A200948FE2 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11957851D9D85A200948FE2 /* SearchResultCell.swift */; };
 		E1305D6A1D98AA3700370048 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1305D691D98AA3700370048 /* NavigationController.swift */; };
 		E1605EC11D9C4C1200FD26A6 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1605EC01D9C4C1200FD26A6 /* DetailController.swift */; };
 		E17ED4D41D8EF14C00F188FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D31D8EF14C00F188FD /* AppDelegate.swift */; };
@@ -51,6 +53,8 @@
 		92D9918873325656D4C00912 /* Pods_Camping_Directory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Camping_Directory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB98E0EC9E9535652FF8D4E /* Pods-Camping DirectoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camping DirectoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Camping DirectoryTests/Pods-Camping DirectoryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A461726DFD8528AF113AC149 /* Pods-Camping DirectoryUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Camping DirectoryUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Camping DirectoryUITests/Pods-Camping DirectoryUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E11957831D9D749F00948FE2 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E11957851D9D85A200948FE2 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		E1305D691D98AA3700370048 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E1605EC01D9C4C1200FD26A6 /* DetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		E17ED4D01D8EF14C00F188FD /* Camping Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Camping Directory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +169,8 @@
 				E1605EC01D9C4C1200FD26A6 /* DetailController.swift */,
 				E1D04CD61D9C5DEC0058A4AC /* UIViewControllerExt.swift */,
 				E1D04CD81D9C62F40058A4AC /* UIImageViewExt.swift */,
+				E11957831D9D749F00948FE2 /* Data.swift */,
+				E11957851D9D85A200948FE2 /* SearchResultCell.swift */,
 			);
 			path = "Camping Directory";
 			sourceTree = "<group>";
@@ -464,9 +470,11 @@
 				E17ED4D81D8EF14C00F188FD /* SearchResultsController.swift in Sources */,
 				E17ED4D41D8EF14C00F188FD /* AppDelegate.swift in Sources */,
 				E1305D6A1D98AA3700370048 /* NavigationController.swift in Sources */,
+				E11957861D9D85A200948FE2 /* SearchResultCell.swift in Sources */,
 				E1D04CD91D9C62F40058A4AC /* UIImageViewExt.swift in Sources */,
 				E1D04CD71D9C5DEC0058A4AC /* UIViewControllerExt.swift in Sources */,
 				E1605EC11D9C4C1200FD26A6 /* DetailController.swift in Sources */,
+				E11957841D9D749F00948FE2 /* Data.swift in Sources */,
 				E1F4C5EC1D933642006507E7 /* SearchController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
