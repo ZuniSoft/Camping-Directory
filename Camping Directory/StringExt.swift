@@ -17,9 +17,6 @@ private let characterEntities : [ String : Character ] = [
     "&lt;"      : "<",
     "&gt;"      : ">",
     
-    // Other
-    "&#39;"     : "'",
-    
     // HTML character entity references:
     "&nbsp;"     : "\u{00a0}",
     "&iexcl;"    : "\u{00A1}",

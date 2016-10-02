@@ -17,7 +17,7 @@ class DetailController: UIViewController, MKMapViewDelegate {
     
     // Varibles
     var request: Alamofire.Request?
-    let regionRadius: CLLocationDistance = 2000
+    let regionRadius: CLLocationDistance = 20000
     var annotation: MKPointAnnotation = MKPointAnnotation()
     
     // Outlets
@@ -95,10 +95,7 @@ class DetailController: UIViewController, MKMapViewDelegate {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         
         mapView.setRegion(coordinateRegion, animated: true)
-        
-        //annotation = MKPointAnnotation()
         annotation.coordinate = coordinateRegion.center
-
         mapView.addAnnotation(annotation)
     }
 }

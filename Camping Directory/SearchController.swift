@@ -8,13 +8,25 @@
 
 import UIKit
 
-class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIScrollViewDelegate {
     
     var pickerDataSource: [String] = Constants.stateList
     var statePickerValue: String = ""
     
+    
+    @IBOutlet weak var optionScroll: UIScrollView!
+    @IBOutlet weak var viewScroll: UIView!
     @IBOutlet weak var statePicker: UIPickerView!
+    @IBOutlet weak var maxPeopleField: UITextField!
+    @IBOutlet weak var cgNameField: UITextField!
+    @IBOutlet weak var rvLengthField: UITextField!
     @IBOutlet weak var petsAllowedSwitch: UISwitch!
+    @IBOutlet weak var waterSwitch: UISwitch!
+    @IBOutlet weak var sewerSwitch: UISwitch!
+    @IBOutlet weak var pullThroughSwitch: UISwitch!
+    @IBOutlet weak var waterFrontSwitch: UISwitch!
+    @IBOutlet weak var ampsAvailableSegment: UISegmentedControl!
+    @IBOutlet weak var facilityTypeSegment: UISegmentedControl!
     @IBOutlet weak var searchButton: UIButton!
     
     @IBAction func searchButtonClicked(_ sender: UIButton) {
@@ -28,10 +40,12 @@ class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         self.statePicker.dataSource = self;
         self.statePicker.delegate = self;
         
+        self.optionScroll.delegate = self
+        
         // Defaults
         self.statePicker.selectedRow(inComponent: 0)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
