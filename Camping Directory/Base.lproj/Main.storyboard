@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XzM-7q-ExF">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XzM-7q-ExF">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -35,8 +35,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FacilityName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtt-TY-tcg">
-                                                    <frame key="frameInset" minX="8" minY="10" width="262" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <frame key="frameInset" minX="8" minY="50.00%" width="359" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -93,13 +93,49 @@
                     <view key="view" contentMode="scaleToFill" id="0VZ-xu-MC5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSg-Yg-vXY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="EfR-AA-lgH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VF9-0C-aSg"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Djb-fQ-Tu7">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="119" id="tJi-MQ-GDi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VF9-0C-aSg" firstAttribute="centerX" secondItem="0VZ-xu-MC5" secondAttribute="centerX" id="3bf-iW-LaR"/>
+                            <constraint firstItem="PSg-Yg-vXY" firstAttribute="leading" secondItem="0VZ-xu-MC5" secondAttribute="leading" id="4tA-eK-E22"/>
+                            <constraint firstItem="PSg-Yg-vXY" firstAttribute="leading" secondItem="VF9-0C-aSg" secondAttribute="leading" id="POF-Ap-QLd"/>
+                            <constraint firstItem="PSg-Yg-vXY" firstAttribute="trailing" secondItem="VF9-0C-aSg" secondAttribute="trailing" id="bUc-Oo-fdQ"/>
+                            <constraint firstItem="Djb-fQ-Tu7" firstAttribute="leading" secondItem="0VZ-xu-MC5" secondAttribute="leadingMargin" id="bhW-F0-X8k"/>
+                            <constraint firstItem="VF9-0C-aSg" firstAttribute="top" secondItem="PSg-Yg-vXY" secondAttribute="bottom" constant="8" symbolic="YES" id="m5P-o8-B9i"/>
+                            <constraint firstItem="Djb-fQ-Tu7" firstAttribute="centerX" secondItem="0VZ-xu-MC5" secondAttribute="centerX" id="ogM-tu-OI1"/>
+                            <constraint firstItem="gIs-6k-Lzw" firstAttribute="top" secondItem="Djb-fQ-Tu7" secondAttribute="bottom" constant="235" id="qbO-oN-ZMy"/>
+                            <constraint firstItem="Djb-fQ-Tu7" firstAttribute="top" secondItem="VF9-0C-aSg" secondAttribute="bottom" constant="8" symbolic="YES" id="rR4-e9-TCX"/>
+                            <constraint firstItem="PSg-Yg-vXY" firstAttribute="top" secondItem="1a8-7E-3E8" secondAttribute="bottom" constant="8" symbolic="YES" id="tdo-HV-2t6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="RZo-sT-pZK"/>
+                    <connections>
+                        <outlet property="mapView" destination="VF9-0C-aSg" id="iRV-Oo-GCb"/>
+                        <outlet property="nameLabel" destination="PSg-Yg-vXY" id="meI-M7-gyy"/>
+                        <outlet property="noteView" destination="Djb-fQ-Tu7" id="aHq-pB-82a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8W-hq-OPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7670" y="-224"/>
+            <point key="canvasLocation" x="7669.6000000000004" y="-224.4377811094453"/>
         </scene>
         <!--Search Controller-->
         <scene sceneID="wec-KM-AGj">
@@ -199,9 +235,12 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XzM-7q-ExF" customClass="NavigationController" customModule="Camping_Directory" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T3q-3m-0BD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="T3q-3m-0BD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

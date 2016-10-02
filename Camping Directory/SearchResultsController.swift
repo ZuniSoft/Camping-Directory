@@ -16,6 +16,7 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
    
     var sequeUrl : String?
     var data:[Data.SearchResult] = []
+    var request: Alamofire.Request?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,46 +27,55 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
         loadData(url: sequeUrl!)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        request?.cancel()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func loadData(url : String) {
-        
-        Alamofire.request(url).responseString { response in
+        request = Alamofire.request(url).responseString { response in
             switch response.result {
                 case .success:
                     let xml = SWXMLHash.parse(response.result.value!)
                     
+                    if (xml["resultset"].children.count == 0) {
+                        self.alert(message: "No results...")
+                        return
+                    }
+                    
                     for index in 1...xml["resultset"].children.count - 1 {
                         for elem in xml["resultset"] {
-                            let state = elem["result"][index].element?.attribute(by: "state")?.text
-                            
+                            let contractId = elem["result"][index].element?.attribute(by: "contractID")?.text
+                        
                             let fname = elem["result"][index].element?.attribute(by: "facilityName")?.text
-                            
+                        
                             let fid = elem["result"][index].element?.attribute(by: "facilityID")?.text
-                            
+                        
                             let lat = elem["result"][index].element?.attribute(by: "latitude")?.text
-                            
+                        
                             let long = elem["result"][index].element?.attribute(by: "longitude")?.text
-                            
+                        
                             var result: Data.SearchResult! = Data.SearchResult()
-                            
-                            result.state = state!
-                            result.facilityName = fname!
+                        
+                            result.contractId = contractId!
+                            result.facilityName = fname!.stringByDecodingHTMLEntities
                             result.facilityId = fid!
                             result.latitude = lat!
                             result.longitude = long!
-                            
+                        
                             self.data.append(result)
                         }
+                        
                     }
-                    
-                    // Load the tableview
-                    self.tableView.reloadData()
-                case .failure(let error):
-                    self.alert(message: error.localizedDescription)
+                
+                // Load the tableview
+                self.tableView.reloadData()
+            case .failure(let error):
+                self.alert(message: error.localizedDescription)
             }
         }
     }
@@ -83,7 +93,7 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
         
         let result = self.data[indexPath.row]
         
-        cell.FacilityName?.text = result.facilityName;
+        cell.FacilityName?.text = result.facilityName.stringByDecodingHTMLEntities;
         cell.FacilityId?.text = result.facilityId;
         
         return cell;
@@ -99,9 +109,9 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
         
         var sequeData = Data.SearchResult()
         
-        sequeData.state = data[selectedRow].state
+        sequeData.contractId = data[selectedRow].contractId
         sequeData.facilityId = data[selectedRow].facilityId
-        sequeData.facilityName = data[selectedRow].facilityName
+        sequeData.facilityName = data[selectedRow].facilityName.stringByDecodingHTMLEntities
         sequeData.latitude = data[selectedRow].latitude
         sequeData.longitude = data[selectedRow].longitude
         

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-hf-tfs">
@@ -24,7 +24,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="uqL-ev-12z"/>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gK-lK-aOo">
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="u8e-nE-bep"/>
+                                            <constraint firstAttribute="height" constant="23" id="zr1-LO-QJp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -38,25 +38,22 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" id="6cT-Jo-vER"/>
-                                    <constraint firstItem="uqL-ev-12z" firstAttribute="leading" secondItem="QkE-hf-tfs" secondAttribute="leading" constant="13" id="93l-vS-0dr"/>
-                                    <constraint firstItem="C5s-F0-e56" firstAttribute="leading" secondItem="QkE-hf-tfs" secondAttribute="leading" constant="86" id="GB7-dO-wXk"/>
-                                    <constraint firstItem="C5s-F0-e56" firstAttribute="top" secondItem="uqL-ev-12z" secondAttribute="bottom" constant="20" id="I6T-tf-rhN"/>
-                                    <constraint firstItem="uqL-ev-12z" firstAttribute="top" secondItem="9gK-lK-aOo" secondAttribute="bottom" constant="19" id="MMa-SA-zxU"/>
-                                    <constraint firstAttribute="height" constant="340" id="OZ1-hD-0FY"/>
-                                    <constraint firstItem="uqL-ev-12z" firstAttribute="centerY" secondItem="QkE-hf-tfs" secondAttribute="centerY" id="RLQ-LV-5nf"/>
-                                    <constraint firstItem="uqL-ev-12z" firstAttribute="centerX" secondItem="C5s-F0-e56" secondAttribute="centerX" id="SRP-FJ-4B3"/>
-                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="leading" secondItem="QkE-hf-tfs" secondAttribute="leading" constant="96" id="XWB-2p-2hB"/>
-                                    <constraint firstItem="C5s-F0-e56" firstAttribute="bottom" secondItem="QkE-hf-tfs" secondAttribute="bottomMargin" id="ZS8-j0-jzq"/>
-                                    <constraint firstAttribute="width" constant="348" id="a8g-Wu-mKt"/>
-                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="top" secondItem="QkE-hf-tfs" secondAttribute="topMargin" id="iNd-xr-Nir"/>
-                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="centerX" secondItem="uqL-ev-12z" secondAttribute="centerX" id="uP9-UG-3bY"/>
+                                    <constraint firstItem="C5s-F0-e56" firstAttribute="top" secondItem="uqL-ev-12z" secondAttribute="bottom" constant="20" id="390-UK-4wW"/>
+                                    <constraint firstItem="uqL-ev-12z" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" id="3vD-wt-poC"/>
+                                    <constraint firstItem="C5s-F0-e56" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" constant="-0.25" id="Aul-ad-VVH"/>
+                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" constant="-0.25" id="EHJ-CF-76N"/>
+                                    <constraint firstItem="uqL-ev-12z" firstAttribute="leading" secondItem="QkE-hf-tfs" secondAttribute="leading" constant="13" id="Lk2-gM-Z2x"/>
+                                    <constraint firstItem="uqL-ev-12z" firstAttribute="centerY" secondItem="QkE-hf-tfs" secondAttribute="centerY" id="STw-0S-kJX"/>
+                                    <constraint firstItem="uqL-ev-12z" firstAttribute="top" secondItem="9gK-lK-aOo" secondAttribute="bottom" constant="17" id="aNU-km-aF5"/>
+                                    <constraint firstAttribute="bottom" secondItem="C5s-F0-e56" secondAttribute="bottom" id="cxB-hm-5dG"/>
+                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="top" secondItem="QkE-hf-tfs" secondAttribute="topMargin" id="paL-o1-uDS"/>
+                                    <constraint firstItem="C5s-F0-e56" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" constant="-0.25" id="sWS-TP-K4S"/>
+                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" id="uLx-9R-CqJ"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016-2017 Zunisoft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqa-AJ-QJ5">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="Wax-bW-awo"/>
-                                    <constraint firstAttribute="height" constant="21" id="gOi-Q8-6Ay"/>
+                                    <constraint firstAttribute="height" constant="21" id="nyp-MX-BoV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,18 +62,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Pzi-14-eyG"/>
-                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-0.5" id="Qpy-bP-lod"/>
-                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-0.5" id="gfn-Ox-5sl"/>
-                            <constraint firstItem="Cqa-AJ-QJ5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-0.5" id="kol-ww-dvg"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Cqa-AJ-QJ5" secondAttribute="bottom" constant="20" id="tGc-p0-GfN"/>
-                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ydn-cU-dj6"/>
+                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7UM-WT-m8g"/>
+                            <constraint firstItem="Cqa-AJ-QJ5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="66" id="SYJ-Qn-mYf"/>
+                            <constraint firstAttribute="bottom" secondItem="Cqa-AJ-QJ5" secondAttribute="bottom" constant="20" symbolic="YES" id="aZp-JF-Tel"/>
+                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="acn-zl-rj3"/>
+                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="h74-iN-jOH"/>
+                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sLb-JA-fuB"/>
+                            <constraint firstItem="Cqa-AJ-QJ5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uzB-cE-dUs"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>

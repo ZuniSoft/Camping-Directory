@@ -10,7 +10,7 @@ import Foundation
 
 class Data {
     struct SearchResult {
-        var state = String();
+        var contractId = String();
         var facilityName = String();
         var facilityId = String();
         var latitude = String();
