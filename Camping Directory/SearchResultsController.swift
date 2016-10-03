@@ -47,7 +47,7 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
                         return
                     }
                     
-                    for index in 1...xml["resultset"].children.count - 1 {
+                    for index in 0...xml["resultset"].children.count - 1 {
                         for elem in xml["resultset"] {
                             let contractId = elem["result"][index].element?.attribute(by: "contractID")?.text
                         

@@ -11,7 +11,7 @@ import MapKit
 import Alamofire
 import SWXMLHash
 
-class DetailController: UIViewController, MKMapViewDelegate {
+class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegate {
     // Segue data
     var sequeData : Data.SearchResult?
     
@@ -21,8 +21,13 @@ class DetailController: UIViewController, MKMapViewDelegate {
     var annotation: MKPointAnnotation = MKPointAnnotation()
     
     // Outlets
+    @IBOutlet weak var detailScroll: UIScrollView!
+    @IBOutlet weak var viewScroll: UIView!
     @IBOutlet weak var noteView: UITextView!
+    @IBOutlet weak var alertView: UITextView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var directLineView: UITextView!
+    @IBOutlet weak var rangerLineView: UITextView!
     @IBOutlet weak var mapView: MKMapView!
 
     
@@ -34,9 +39,11 @@ class DetailController: UIViewController, MKMapViewDelegate {
         
         nameLabel.text = sequeData?.facilityName
         
-        // Mapview
+        // Delegates
+        self.detailScroll.delegate = self;
         self.mapView.delegate = self;
         
+        // Mapview
         let initialLocation = CLLocation(latitude: Double((sequeData?.latitude)!)!, longitude: Double((sequeData?.longitude)!)!)
         self.centerMapOnLocation(location: initialLocation)
 
@@ -58,7 +65,6 @@ class DetailController: UIViewController, MKMapViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         request?.cancel()
     }
-
     
     func loadData(url : String) {
         
@@ -70,8 +76,30 @@ class DetailController: UIViewController, MKMapViewDelegate {
                 for index in 0...xml["detailDescription"].children.count - 1 {
                     for elem in xml["detailDescription"] {
                         if(index == 0) {
+                            // Description
                             let note = elem[index].element?.attribute(by: "description")?.text
                             self.noteView.text = note?.stringByDecodingHTMLEntities.stringByDecodingHTMLEntities
+                            
+                            // Alerts
+                            let alert = elem[index].element?.attribute(by: "importantInformation")?.text
+                            
+                            if(alert != "") {
+                                self.alertView.text = alert?.stringByDecodingHTMLEntities.stringByDecodingHTMLEntities
+                            } else {
+                                self.alertView.text = "No alerts at this time."
+                            }
+                            
+                            // Direct phone
+                            var value = elem[index]["contact"][0].element?.attribute(by: "number")?.text
+                            if (value != "") {
+                                self.directLineView.text = self.formatPhoneNumber(phoneString: value!)
+                            }
+                            
+                            // Rangerstation phone
+                            value = elem[index]["contact"][1].element?.attribute(by: "number")?.text
+                            if (value != "") {
+                                self.rangerLineView.text = self.formatPhoneNumber(phoneString: value!)
+                            }
                         }
                     }
                 }
@@ -97,5 +125,16 @@ class DetailController: UIViewController, MKMapViewDelegate {
         mapView.setRegion(coordinateRegion, animated: true)
         annotation.coordinate = coordinateRegion.center
         mapView.addAnnotation(annotation)
+    }
+    
+    func formatPhoneNumber(phoneString: String) -> String {
+        let stringToFormat: NSMutableString = NSMutableString(string: phoneString)
+        
+        stringToFormat.insert("(", at: 0)
+        stringToFormat.insert(")", at: 4)
+        stringToFormat.insert(" ", at: 5)
+        stringToFormat.insert("-", at: 9)
+        
+        return stringToFormat as String
     }
 }
