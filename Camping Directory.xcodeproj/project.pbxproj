@@ -12,6 +12,7 @@
 		E11957861D9D85A200948FE2 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11957851D9D85A200948FE2 /* SearchResultCell.swift */; };
 		E1305D6A1D98AA3700370048 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1305D691D98AA3700370048 /* NavigationController.swift */; };
 		E1605EC11D9C4C1200FD26A6 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1605EC01D9C4C1200FD26A6 /* DetailController.swift */; };
+		E16E4D2E1DA57FB90049B8B3 /* AmenityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16E4D2D1DA57FB90049B8B3 /* AmenityCell.swift */; };
 		E17ED4D41D8EF14C00F188FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D31D8EF14C00F188FD /* AppDelegate.swift */; };
 		E17ED4D81D8EF14C00F188FD /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17ED4D71D8EF14C00F188FD /* SearchResultsController.swift */; };
 		E17ED4DD1D8EF14C00F188FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E17ED4DB1D8EF14C00F188FD /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		E11957851D9D85A200948FE2 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		E1305D691D98AA3700370048 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E1605EC01D9C4C1200FD26A6 /* DetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		E16E4D2D1DA57FB90049B8B3 /* AmenityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmenityCell.swift; sourceTree = "<group>"; };
 		E17ED4D01D8EF14C00F188FD /* Camping Directory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Camping Directory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17ED4D31D8EF14C00F188FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E17ED4D71D8EF14C00F188FD /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				E11957831D9D749F00948FE2 /* Data.swift */,
 				E11957851D9D85A200948FE2 /* SearchResultCell.swift */,
 				E1F719631DA07B6500B6F477 /* StringExt.swift */,
+				E16E4D2D1DA57FB90049B8B3 /* AmenityCell.swift */,
 			);
 			path = "Camping Directory";
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				E1305D6A1D98AA3700370048 /* NavigationController.swift in Sources */,
 				E11957861D9D85A200948FE2 /* SearchResultCell.swift in Sources */,
 				E1D04CD91D9C62F40058A4AC /* UIImageViewExt.swift in Sources */,
+				E16E4D2E1DA57FB90049B8B3 /* AmenityCell.swift in Sources */,
 				E1D04CD71D9C5DEC0058A4AC /* UIViewControllerExt.swift in Sources */,
 				E1605EC11D9C4C1200FD26A6 /* DetailController.swift in Sources */,
 				E11957841D9D749F00948FE2 /* Data.swift in Sources */,

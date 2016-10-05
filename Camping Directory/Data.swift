@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Data {
     struct SearchResult {
@@ -15,5 +16,11 @@ class Data {
         var facilityId = String();
         var latitude = String();
         var longitude = String();
+    }
+    
+    struct AmenityResult {
+        var amenityDescription = String();
+        var amenityLocation = String();
+        var amenityIcon = UIImage();
     }
 }

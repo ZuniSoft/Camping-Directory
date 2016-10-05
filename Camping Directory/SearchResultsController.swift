@@ -85,9 +85,6 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell;
-        */
         
         let cell:SearchResultCell = tableView.dequeueReusableCell(withIdentifier: "cell") as! SearchResultCell
         
