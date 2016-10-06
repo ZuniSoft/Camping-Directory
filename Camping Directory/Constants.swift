@@ -11,7 +11,7 @@ import Foundation
 struct Constants {
     static let svcCampgroundURL = "http://api.amp.active.com/camping/campgrounds"
     static let svcCampgroundDetailURL = "http://api.amp.active.com/camping/campground/details"
-    static let svcCampgroundAPIKey = "f7rk6put964u42x5jb32wsj4"
+    static let svcCampgroundAPIKey = "XXXXXXXXXXXXXXXXXXX"
     
     static let stateList = ["Alabama",
                             "Alaska",
