@@ -10,5 +10,12 @@ import UIKit
 
 class SearchResultCell: UITableViewCell {
     @IBOutlet weak var FacilityName: UILabel!
+    @IBOutlet weak var powerIcon: UIImageView!
+    @IBOutlet weak var waterIcon: UIImageView!
+    @IBOutlet weak var sewerIcon: UIImageView!
+    @IBOutlet weak var powerLabel: UILabel!
+    @IBOutlet weak var waterLabel: UILabel!
+    @IBOutlet weak var sewerLabel: UILabel!
     @IBOutlet weak var FacilityId: UILabel!
+    @IBOutlet weak var Icon: UIImageView!
 }

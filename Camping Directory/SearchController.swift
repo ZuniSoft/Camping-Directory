@@ -196,7 +196,7 @@ class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDe
             newSequeUrl += "&hookup=" + powerValue!
         }
         
-        debugPrint("\nURL: " + newSequeUrl + "\n")
+        debugPrint("URL: " + newSequeUrl)
         
         // Create a new variable to store the instance of SearchResultsViewController
         let destinationVC = segue.destination as! SearchResultsController

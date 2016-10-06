@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,21 +15,31 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-hf-tfs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016-2017 Zunisoft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqa-AJ-QJ5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="dFJ-Fs-1Uj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-hf-tfs">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="uqL-ev-12z"/>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gK-lK-aOo">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="23" id="zr1-LO-QJp"/>
-                                        </constraints>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="uqL-ev-12z">
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camping Directory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5s-F0-e56">
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camping Directory" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5s-F0-e56">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gK-lK-aOo">
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -38,37 +47,25 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="C5s-F0-e56" firstAttribute="top" secondItem="uqL-ev-12z" secondAttribute="bottom" constant="20" id="390-UK-4wW"/>
-                                    <constraint firstItem="uqL-ev-12z" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" id="3vD-wt-poC"/>
-                                    <constraint firstItem="C5s-F0-e56" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" constant="-0.25" id="Aul-ad-VVH"/>
-                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" constant="-0.25" id="EHJ-CF-76N"/>
-                                    <constraint firstItem="uqL-ev-12z" firstAttribute="leading" secondItem="QkE-hf-tfs" secondAttribute="leading" constant="13" id="Lk2-gM-Z2x"/>
-                                    <constraint firstItem="uqL-ev-12z" firstAttribute="centerY" secondItem="QkE-hf-tfs" secondAttribute="centerY" id="STw-0S-kJX"/>
-                                    <constraint firstItem="uqL-ev-12z" firstAttribute="top" secondItem="9gK-lK-aOo" secondAttribute="bottom" constant="17" id="aNU-km-aF5"/>
-                                    <constraint firstAttribute="bottom" secondItem="C5s-F0-e56" secondAttribute="bottom" id="cxB-hm-5dG"/>
-                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="top" secondItem="QkE-hf-tfs" secondAttribute="topMargin" id="paL-o1-uDS"/>
-                                    <constraint firstItem="C5s-F0-e56" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" constant="-0.25" id="sWS-TP-K4S"/>
-                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" id="uLx-9R-CqJ"/>
+                                    <constraint firstItem="C5s-F0-e56" firstAttribute="top" secondItem="uqL-ev-12z" secondAttribute="bottom" constant="8" symbolic="YES" id="567-cJ-wgg"/>
+                                    <constraint firstItem="uqL-ev-12z" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" id="8aC-Zz-ouL"/>
+                                    <constraint firstAttribute="bottom" secondItem="C5s-F0-e56" secondAttribute="bottom" constant="4" id="91j-Wb-2Uz"/>
+                                    <constraint firstItem="uqL-ev-12z" firstAttribute="centerY" secondItem="QkE-hf-tfs" secondAttribute="centerY" id="EGO-m4-dCN"/>
+                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" id="G16-QG-peM"/>
+                                    <constraint firstItem="uqL-ev-12z" firstAttribute="centerY" secondItem="QkE-hf-tfs" secondAttribute="centerY" id="QIf-fE-UyJ"/>
+                                    <constraint firstItem="uqL-ev-12z" firstAttribute="centerX" secondItem="C5s-F0-e56" secondAttribute="centerX" id="Y1K-LY-Mh7"/>
+                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="centerX" secondItem="uqL-ev-12z" secondAttribute="centerX" id="Y3V-6h-hMB"/>
+                                    <constraint firstItem="uqL-ev-12z" firstAttribute="leading" secondItem="QkE-hf-tfs" secondAttribute="leading" constant="22" id="vXk-bn-sEQ"/>
+                                    <constraint firstItem="9gK-lK-aOo" firstAttribute="top" secondItem="QkE-hf-tfs" secondAttribute="top" id="vwc-0j-ZOu"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016-2017 Zunisoft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqa-AJ-QJ5">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="nyp-MX-BoV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7UM-WT-m8g"/>
-                            <constraint firstItem="Cqa-AJ-QJ5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="66" id="SYJ-Qn-mYf"/>
-                            <constraint firstAttribute="bottom" secondItem="Cqa-AJ-QJ5" secondAttribute="bottom" constant="20" symbolic="YES" id="aZp-JF-Tel"/>
-                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="acn-zl-rj3"/>
-                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="h74-iN-jOH"/>
-                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sLb-JA-fuB"/>
-                            <constraint firstItem="Cqa-AJ-QJ5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uzB-cE-dUs"/>
+                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="8Qv-de-hCc"/>
+                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LWn-wb-ZlT"/>
+                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerX" secondItem="Cqa-AJ-QJ5" secondAttribute="centerX" id="Zj2-Lv-exU"/>
+                            <constraint firstAttribute="bottom" secondItem="Cqa-AJ-QJ5" secondAttribute="bottom" constant="20" symbolic="YES" id="q2S-b9-L6j"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -58,6 +58,12 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
                             let lat = elem["result"][index].element?.attribute(by: "latitude")?.text
                         
                             let long = elem["result"][index].element?.attribute(by: "longitude")?.text
+                            
+                            let power = elem["result"][index].element?.attribute(by: "sitesWithAmps")?.text
+                            
+                            let water = elem["result"][index].element?.attribute(by: "sitesWithWaterHookup")?.text
+                            
+                            let sewer = elem["result"][index].element?.attribute(by: "sitesWithSewerHookup")?.text
                         
                             var result: Data.SearchResult! = Data.SearchResult()
                         
@@ -66,6 +72,13 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
                             result.facilityId = fid!
                             result.latitude = lat!
                             result.longitude = long!
+                            result.power = power!
+                            result.water = water!
+                            result.sewer = sewer!
+                            result.icon = UIImage(named: "Mountains")!
+                            result.powerIcon = UIImage(named: "ElectricHookups")!
+                            result.waterIcon = UIImage(named: "Water")!
+                            result.sewerIcon = UIImage(named: "Sewer")!
                         
                             self.data.append(result)
                         }
@@ -92,6 +105,13 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
         
         cell.FacilityName?.text = result.facilityName.stringByDecodingHTMLEntities;
         cell.FacilityId?.text = result.facilityId;
+        cell.powerLabel?.text = result.power;
+        cell.waterLabel?.text = result.water;
+        cell.sewerLabel?.text = result.sewer;
+        cell.Icon?.image = result.icon;
+        cell.powerIcon?.image = result.powerIcon;
+        cell.waterIcon?.image = result.waterIcon;
+        cell.sewerIcon?.image = result.sewerIcon;
         
         return cell;
     }

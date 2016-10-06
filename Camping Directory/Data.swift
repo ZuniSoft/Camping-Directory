@@ -16,6 +16,13 @@ class Data {
         var facilityId = String();
         var latitude = String();
         var longitude = String();
+        var power = String();
+        var water = String();
+        var sewer = String();
+        var icon = UIImage();
+        var powerIcon = UIImage();
+        var waterIcon = UIImage();
+        var sewerIcon = UIImage();
     }
     
     struct AmenityResult {
