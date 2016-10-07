@@ -75,7 +75,7 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
                             result.power = power!
                             result.water = water!
                             result.sewer = sewer!
-                            result.icon = UIImage(named: "Mountains")!
+                            result.icon = UIImage(named: "Campground")!
                             result.powerIcon = UIImage(named: "ElectricHookups")!
                             result.waterIcon = UIImage(named: "Water")!
                             result.sewerIcon = UIImage(named: "Sewer")!

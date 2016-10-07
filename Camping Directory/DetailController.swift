@@ -29,9 +29,11 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
     @IBOutlet weak var viewScroll: UIView!
     @IBOutlet weak var noteView: UITextView!
     @IBOutlet weak var alertView: UITextView!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var directLineView: UITextView!
     @IBOutlet weak var rangerLineView: UITextView!
+    @IBOutlet weak var reservationUrlView: UITextView!
     @IBOutlet weak var mapView: MKMapView!
 
     
@@ -96,6 +98,19 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 self.alertView.text = "No alerts at this time."
                             }
                             
+                            // Address
+                            let street = elem[index]["address"][0].element?.attribute(by: "streetAddress")?.text
+                            let city = elem[index]["address"][0].element?.attribute(by: "city")?.text
+                            let state = elem[index]["address"][0].element?.attribute(by: "state")?.text
+                            let zipcode = elem[index]["address"][0].element?.attribute(by: "zip")?.text
+                            
+                            var address = street! + ", "
+                            address += city! + ", "
+                            address += state! + " "
+                            address += zipcode!
+                            
+                            self.addressLabel.text = address
+                            
                             // Direct phone
                             var value = elem[index]["contact"][0].element?.attribute(by: "number")?.text
                             if (value != "") {
@@ -108,20 +123,36 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 self.rangerLineView.text = self.formatPhoneNumber(phoneString: value!)
                             }
                             
+                            // Reservation URL
+                            let reservationUrl = elem[index].element?.attribute(by: "reservationUrl")?.text
+                                
+                            let url = Constants.svcCampsiteReservationURL + reservationUrl!
+                            let msg = "Reserve America" as NSString
+                            let range = msg.range(of: "Reserve America")
+                            
+                            let attributedString = NSMutableAttributedString(string: msg as String)
+                            attributedString.addAttribute(NSLinkAttributeName, value: NSURL(string: url)!, range: range)
+                            
+                            self.reservationUrlView.attributedText = attributedString
+                            
+                            
+                            // Ammentities
                             for amenity in elem[index]["amenity"].all {
                                 var ammenities: Data.AmenityResult! = Data.AmenityResult()
                                 
                                 let aDesc = (amenity.element?.attribute(by: "name")?.text)!
                                 let aLoc = (amenity.element?.attribute(by: "distance")?.text)!
                                 
+                                debugPrint("Amenity Description: " + aDesc)
+                                
                                 ammenities.amenityDescription = aDesc.stringByDecodingHTMLEntities
                                 ammenities.amenityLocation = aLoc.stringByDecodingHTMLEntities
                                 
                                 switch ammenities.amenityDescription {
-                                case "Accessible Flush Toilets":
+                                case "Accessible Flush Toilets", "Accessible Vault Toilets", "Toilet, Accessible":
                                     ammenities.amenityIcon = UIImage(named: "Accessible")!
                                     break;
-                                case "Accessible Sites":
+                                case "Accessible Sites", "ADA Access", "Hiking Accessible":
                                     ammenities.amenityIcon = UIImage(named: "Accessible")!
                                     break;
                                 case "Basketball Courts":
@@ -130,10 +161,10 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Beach Access":
                                     ammenities.amenityIcon = UIImage(named: "BeachAccess")!
                                     break;
-                                case "Biking", "Mountain Biking":
+                                case "Biking", "Mountain Biking", "Bike Rentals":
                                     ammenities.amenityIcon = UIImage(named: "Biking")!
                                     break;
-                                case "Bird Watching", "Birding":
+                                case "Bird Watching", "Birdwatching", "Birding":
                                     ammenities.amenityIcon = UIImage(named: "BirdWatching")!
                                     break;
                                 case "Boating", "Boat Rentals":
@@ -142,19 +173,19 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Climbing":
                                     ammenities.amenityIcon = UIImage(named: "Climbing")!
                                     break;
-                                case "Creek Access":
+                                case "Creek Access", "River Access":
                                     ammenities.amenityIcon = UIImage(named: "CreekAccess")!
                                     break;
                                 case "Cross Country Skiing":
                                     ammenities.amenityIcon = UIImage(named: "CrossCountrySkiing")!
                                     break;
-                                case "Drinking Water", "Water":
+                                case "Drinking Water", "Water", "Drinking Water (Peak Season)", "Potable Water":
                                     ammenities.amenityIcon = UIImage(named: "DrinkingWater")!
                                     break;
                                 case "Dump Station":
                                     ammenities.amenityIcon = UIImage(named: "DumpStation")!
                                     break;
-                                case "Educational Programs", "Interpretitive Programs", "Nature Study Exhibits", "Interpretitive Trails":
+                                case "Educational Programs", "Interpretitive Programs", "Nature Study Exhibits", "Interpretitive Trails", "Campfire Programs", "Interpretive Trails", "Backpacking Camping":
                                     ammenities.amenityIcon = UIImage(named: "EducationalPrograms")!
                                     break;
                                 case "Electric Hookups":
@@ -166,19 +197,22 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Firewood Vendor", "Firewood", "Firewood Available":
                                     ammenities.amenityIcon = UIImage(named: "FirewoodVendor")!
                                     break;
-                                case "Fishing":
+                                case "Fishing", "Fish Cleaning Stations":
                                     ammenities.amenityIcon = UIImage(named: "Fishing")!
                                     break;
-                                case "Flush Toilets", "Vault Toilets", "Comfort Station":
+                                case "Flush Toilets", "Vault Toilets", "Comfort Station", "Pit Toilets", "Pit Toilet", "Restrooms":
                                     ammenities.amenityIcon = UIImage(named: "FlushToilets")!
+                                    break;
+                                case "Food Storage Locker", "Food storage lockers":
+                                    ammenities.amenityIcon = UIImage(named: "FoodLocker")!
                                     break;
                                 case "Fuel Available":
                                     ammenities.amenityIcon = UIImage(named: "FuelAvailable")!
                                     break;
-                                case "General Store":
+                                case "General Store", "Grocery Store", "Store", "Store - Convenience":
                                     ammenities.amenityIcon = UIImage(named: "GeneralStore")!
                                     break;
-                                case "Grills", "Campfire Rings":
+                                case "Grills", "Campfire Rings", "Fire Rings", "Campfire Circles":
                                     ammenities.amenityIcon = UIImage(named: "Grills")!
                                     break;
                                 case "Group Campground", "Group Camping":
@@ -190,7 +224,7 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Historic Sites":
                                     ammenities.amenityIcon = UIImage(named: "HistoricSites")!
                                     break;
-                                case "Horseback Riding":
+                                case "Horseback Riding", "Equestrian Sites", "Pack Station", "Horseback Riding Trails":
                                     ammenities.amenityIcon = UIImage(named: "HorsebackRiding")!
                                     break;
                                 case "Horseshoe Pit":
@@ -202,11 +236,13 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Hunting":
                                     ammenities.amenityIcon = UIImage(named: "Hunting")!
                                     break;
-                                case "Ice Machine":
+                                case "Ice Machine", "Ice":
                                     ammenities.amenityIcon = UIImage(named: "IceMachine")!
                                     break;
                                 case "Jet Skiing":
                                     ammenities.amenityIcon = UIImage(named: "JetSkiing")!
+                                case "Kayaking", "Canoeing":
+                                    ammenities.amenityIcon = UIImage(named: "Kayaking")!
                                     break;
                                 case "Lake Access":
                                     ammenities.amenityIcon = UIImage(named: "LakeAccess")!
@@ -214,7 +250,7 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Laundry Facilities":
                                     ammenities.amenityIcon = UIImage(named: "LaundryFacilities")!
                                     break;
-                                case "Non-Motorized Boating", "Marina":
+                                case "Non-Motorized Boating", "Marina", "Sailing":
                                     ammenities.amenityIcon = UIImage(named: "Non-MotorizedBoating")!
                                     break;
                                 case "Off-Road Vehicle Trails":
@@ -223,7 +259,7 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Parking Area", "Parking":
                                     ammenities.amenityIcon = UIImage(named: "ParkingArea")!
                                     break;
-                                case "Pay Phone":
+                                case "Pay Phone", "Telephone":
                                     ammenities.amenityIcon = UIImage(named: "PayPhone")!
                                     break;
                                 case "Pets Allowed":
@@ -232,7 +268,7 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Photography":
                                     ammenities.amenityIcon = UIImage(named: "Photography")!
                                     break;
-                                case "Picnic Area", "Picnicking":
+                                case "Picnic Area", "Picnicking", "Picnicing":
                                     ammenities.amenityIcon = UIImage(named: "PicnicArea")!
                                     break;
                                 case "Picnic Shelters":
@@ -247,7 +283,13 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Recycling":
                                     ammenities.amenityIcon = UIImage(named: "Recycling")!
                                     break;
-                                case "Self Pay Station":
+                                case "Restaurant", "Cafe", "Cafe/Restaurant":
+                                    ammenities.amenityIcon = UIImage(named: "Restaurant")!
+                                    break;
+                                case "RV sites", "RV Parking":
+                                    ammenities.amenityIcon = UIImage(named: "RVSites")!
+                                    break;
+                                case "Self Pay Station", "Fee Station":
                                     ammenities.amenityIcon = UIImage(named: "SelfPayStation")!
                                     break;
                                 case "Showers":
@@ -262,7 +304,7 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Snow Sledding":
                                     ammenities.amenityIcon = UIImage(named: "SnowSledding")!
                                     break;
-                                case "Swimming":
+                                case "Swimming", "Water Sports":
                                     ammenities.amenityIcon = UIImage(named: "Swimming")!
                                     break;
                                 case "Tables", "Picnic Tables":
@@ -271,22 +313,22 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                                 case "Tent Pads", "Tent sites":
                                     ammenities.amenityIcon = UIImage(named: "TentPads")!
                                     break;
-                                case "Trailheads":
+                                case "Trailheads", "Trails", "Hiking Trails", "Nature Trails":
                                     ammenities.amenityIcon = UIImage(named: "Trailheads")!
                                     break;
-                                case "Trash Collection":
+                                case "Trash Collection", "Dumpster":
                                     ammenities.amenityIcon = UIImage(named: "TrashCollection")!
                                     break;
                                 case "Vending Machines":
                                     ammenities.amenityIcon = UIImage(named: "VendingMachines")!
                                     break;
-                                case "Visitor Center", "Camper Services Bldg":
+                                case "Visitors Center", "Visitor Center", "Camper Services Bldg":
                                     ammenities.amenityIcon = UIImage(named: "VisitorCenter")!
                                     break;
-                                case "Volleyball Courts":
+                                case "Volleyball", "Volleyball Courts":
                                     ammenities.amenityIcon = UIImage(named: "VolleyballCourts")!
                                     break;
-                                case "Water Skiing":
+                                case "Water Skiing", "Windsurfing":
                                     ammenities.amenityIcon = UIImage(named: "WaterSkiing")!
                                     break;
                                 case "Wildlife Viewing", "Wildlife Watching Opportunity":
