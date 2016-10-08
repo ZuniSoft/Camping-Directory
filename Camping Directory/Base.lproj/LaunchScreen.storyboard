@@ -18,9 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016-2017 Zunisoft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqa-AJ-QJ5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016-2017 Keith R. Davis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqa-AJ-QJ5" userLabel="Copyright © 2016-2017 Keith R. Davis">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="dFJ-Fs-1Uj"/>
+                                    <constraint firstAttribute="height" constant="21" id="Ykr-BK-8jK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -59,19 +59,26 @@
                                     <constraint firstItem="9gK-lK-aOo" firstAttribute="top" secondItem="QkE-hf-tfs" secondAttribute="top" id="vwc-0j-ZOu"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0 Beta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhI-5h-tcd">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="QkE-hf-tfs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="8Qv-de-hCc"/>
                             <constraint firstItem="QkE-hf-tfs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LWn-wb-ZlT"/>
-                            <constraint firstItem="QkE-hf-tfs" firstAttribute="centerX" secondItem="Cqa-AJ-QJ5" secondAttribute="centerX" id="Zj2-Lv-exU"/>
-                            <constraint firstAttribute="bottom" secondItem="Cqa-AJ-QJ5" secondAttribute="bottom" constant="20" symbolic="YES" id="q2S-b9-L6j"/>
+                            <constraint firstItem="Cqa-AJ-QJ5" firstAttribute="centerX" secondItem="QkE-hf-tfs" secondAttribute="centerX" id="Ped-vr-Z71"/>
+                            <constraint firstAttribute="bottom" secondItem="Cqa-AJ-QJ5" secondAttribute="bottom" constant="20" symbolic="YES" id="Rxb-WF-gQU"/>
+                            <constraint firstAttribute="bottom" secondItem="NhI-5h-tcd" secondAttribute="bottom" constant="192" id="rmK-YN-5km"/>
+                            <constraint firstItem="NhI-5h-tcd" firstAttribute="centerX" secondItem="Cqa-AJ-QJ5" secondAttribute="centerX" id="yuU-aa-zJd"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="51.5625" y="374.4140625"/>
         </scene>
     </scenes>
     <resources>

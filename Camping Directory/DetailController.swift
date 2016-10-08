@@ -2,6 +2,20 @@
 //  DetailController.swift
 //  Camping Directory
 //
+//  This program is free software; you can redistribute it and/or
+//  modify it under the terms of the GNU General Public License
+//  as published by the Free Software Foundation; either version 2
+//  of the License, or (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program; if not, write to the Free Software
+//  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+//
 //  Created by Keith Davis on 9/28/16.
 //  Copyright © 2016 ZuniSoft. All rights reserved.
 //
@@ -34,6 +48,7 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
     @IBOutlet weak var directLineView: UITextView!
     @IBOutlet weak var rangerLineView: UITextView!
     @IBOutlet weak var reservationUrlView: UITextView!
+    @IBOutlet weak var activeLogoView: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
 
     
@@ -44,6 +59,8 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
         self.automaticallyAdjustsScrollViewInsets = false
         
         nameLabel.text = sequeData?.facilityName
+        
+        activeLogoView.image = UIImage(named: "ActiveLogo")!
         
         // Delegates
         self.detailScroll.delegate = self;
@@ -104,10 +121,10 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                             let state = elem[index]["address"][0].element?.attribute(by: "state")?.text
                             let zipcode = elem[index]["address"][0].element?.attribute(by: "zip")?.text
                             
-                            var address = street! + ", "
-                            address += city! + ", "
-                            address += state! + " "
-                            address += zipcode!
+                            var address = street != "" ? street! + ", " : ""
+                            address += city != "" ? city! + ", " : ""
+                            address += state != "" ? state! + " " : ""
+                            address += zipcode != "" ? zipcode! : ""
                             
                             self.addressLabel.text = address
                             
@@ -134,6 +151,7 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                             attributedString.addAttribute(NSLinkAttributeName, value: NSURL(string: url)!, range: range)
                             
                             self.reservationUrlView.attributedText = attributedString
+                            self.reservationUrlView.font = .systemFont(ofSize: 14)
                             
                             
                             // Ammentities
