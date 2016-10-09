@@ -32,7 +32,8 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
     
     // Varibles
     var request: Alamofire.Request?
-    let regionRadius: CLLocationDistance = 20000
+    let regionRadius: CLLocationDistance = 15000
+    var initialLocation: CLLocation?
     var annotation: MKPointAnnotation = MKPointAnnotation()
     var amenities:[Data.AmenityResult] = []
 
@@ -68,11 +69,6 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
         self.collectionView.delegate = self;
         self.collectionView.dataSource = self;
         
-        
-        // Mapview
-        let initialLocation = CLLocation(latitude: Double((sequeData?.latitude)!)!, longitude: Double((sequeData?.longitude)!)!)
-        self.centerMapOnLocation(location: initialLocation)
-
         // Detail URL
         var detailUrl: String = Constants.svcCampgroundDetailURL
         
@@ -98,6 +94,11 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
             switch response.result {
             case .success:
                 let xml = SWXMLHash.parse(response.result.value!)
+                
+                if (xml["detailDescription"].children.count == 0) {
+                    self.alert(message: "No detail available...")
+                    return
+                }
                 
                 for index in 0...xml["detailDescription"].children.count - 1 {
                     for elem in xml["detailDescription"] {
@@ -127,6 +128,26 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                             address += zipcode != "" ? zipcode! : ""
                             
                             self.addressLabel.text = address
+                            
+                            // Mapview lat and long
+                            if (self.sequeData?.latitude != "" && self.sequeData?.longitude != "") {
+                                self.initialLocation = CLLocation(latitude: Double((self.sequeData?.latitude)!)!, longitude: Double((self.sequeData?.longitude)!)!)
+                                self.centerMapOnLocation(location: self.initialLocation!)
+                            // Mapview address
+                            } else if (address != "" && (self.sequeData?.latitude == "" && self.sequeData?.longitude == "")) {
+                                
+                                var placemark: CLPlacemark!
+                                
+                                CLGeocoder().geocodeAddressString(address, completionHandler: {(placemarks, error)->Void in
+                                    if error == nil {
+                                        
+                                        placemark = (placemarks?[0])! as CLPlacemark
+                                        
+                                        self.initialLocation = CLLocation(latitude: (placemark.location?.coordinate.latitude)!, longitude: (placemark.location?.coordinate.longitude)!)
+                                        self.centerMapOnLocation(location: self.initialLocation!)
+                                    }
+                                })
+                            }
                             
                             // Direct phone
                             var value = elem[index]["contact"][0].element?.attribute(by: "number")?.text
@@ -390,7 +411,7 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let coordinate = CLLocationCoordinate2DMake(Double(self.sequeData!.latitude)!, Double((self.sequeData?.longitude)!)!)
+        let coordinate = CLLocationCoordinate2DMake((initialLocation?.coordinate.latitude)!, (initialLocation?.coordinate.longitude)!)
         let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
         
         mapItem.name = sequeData?.facilityName

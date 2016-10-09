@@ -89,9 +89,9 @@ class SearchResultsController: UIViewController, UITableViewDataSource, UITableV
                             result.facilityId = fid!
                             result.latitude = lat!
                             result.longitude = long!
-                            result.power = power!
-                            result.water = water!
-                            result.sewer = sewer!
+                            result.power = power! != "" ? power! : "?"
+                            result.water = water! != "" ? water! : "?"
+                            result.sewer = sewer! != "" ? sewer! : "?"
                             result.icon = UIImage(named: "Campground")!
                             result.powerIcon = UIImage(named: "ElectricHookups")!
                             result.waterIcon = UIImage(named: "Water")!
