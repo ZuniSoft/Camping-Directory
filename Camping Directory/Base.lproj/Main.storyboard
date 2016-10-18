@@ -25,10 +25,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="113" id="Jt5-SQ-THb" customClass="SearchResultCell" customModule="Camping_Directory" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="768" height="113"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="113"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jt5-SQ-THb" id="uBi-K7-TCf">
-                                            <frame key="frameInset" width="768" height="112"/>
+                                            <frame key="frameInset" width="375" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FacilityId" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="he1-pr-czK">
@@ -305,20 +305,6 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reservations:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfh-Hu-3qQ">
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76k-7N-n88">
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="242" id="9y1-Vo-0pG"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                            </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direct Line:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sC-iE-gaa">
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -344,25 +330,35 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZl-ng-2ID">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="2nf-yq-HtG"/>
+                                                    <constraint firstAttribute="width" constant="132" id="64v-a9-78w"/>
+                                                </constraints>
+                                                <state key="normal" image="ReserveAmerica"/>
+                                                <connections>
+                                                    <action selector="reservationButtonClicked:" destination="Dds-CG-khN" eventType="touchUpInside" id="wG9-Bw-9is"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="yZl-ng-2ID" firstAttribute="top" secondItem="djh-Ts-SWK" secondAttribute="bottom" constant="7" id="16J-E7-SXw"/>
                                             <constraint firstItem="xJO-Vg-Hun" firstAttribute="top" secondItem="M8A-0U-X5Q" secondAttribute="bottom" constant="28" id="3El-k1-enp"/>
                                             <constraint firstItem="0sC-iE-gaa" firstAttribute="bottom" secondItem="8jS-tZ-HRu" secondAttribute="bottom" constant="2" id="3my-GG-krF"/>
                                             <constraint firstItem="M8A-0U-X5Q" firstAttribute="top" secondItem="Djb-fQ-Tu7" secondAttribute="bottom" constant="8" id="6F2-vg-Owg"/>
                                             <constraint firstItem="M8A-0U-X5Q" firstAttribute="trailing" secondItem="Djb-fQ-Tu7" secondAttribute="trailing" id="6nl-wZ-ky9"/>
                                             <constraint firstItem="nW1-mN-TfK" firstAttribute="leading" secondItem="0sC-iE-gaa" secondAttribute="leading" id="BDX-nw-bES"/>
+                                            <constraint firstItem="yZl-ng-2ID" firstAttribute="leading" secondItem="pmX-uz-dkJ" secondAttribute="leading" constant="127" id="CMP-VE-Uah"/>
                                             <constraint firstItem="Djb-fQ-Tu7" firstAttribute="leading" secondItem="0sC-iE-gaa" secondAttribute="leading" id="DYp-4p-nlD"/>
                                             <constraint firstItem="0sC-iE-gaa" firstAttribute="top" secondItem="Djb-fQ-Tu7" secondAttribute="bottom" constant="40" id="E9V-g8-ggV"/>
                                             <constraint firstItem="0sC-iE-gaa" firstAttribute="leading" secondItem="djh-Ts-SWK" secondAttribute="leading" id="EH4-Pp-edg"/>
                                             <constraint firstItem="8jS-tZ-HRu" firstAttribute="top" secondItem="Djb-fQ-Tu7" secondAttribute="bottom" constant="33" id="EXm-1q-OQm"/>
                                             <constraint firstItem="1An-Ep-1gI" firstAttribute="top" secondItem="XhE-4y-Yx4" secondAttribute="bottom" constant="1" id="EZN-5p-or9"/>
-                                            <constraint firstItem="76k-7N-n88" firstAttribute="leading" secondItem="xfh-Hu-3qQ" secondAttribute="trailing" constant="25" id="Gkn-uh-uUN"/>
                                             <constraint firstItem="0sC-iE-gaa" firstAttribute="top" secondItem="nW1-mN-TfK" secondAttribute="bottom" constant="6" id="HLB-DB-qun"/>
                                             <constraint firstItem="p9V-0X-vsA" firstAttribute="top" secondItem="pmX-uz-dkJ" secondAttribute="bottom" constant="9" id="IhN-td-slY"/>
                                             <constraint firstItem="WWf-fa-nuF" firstAttribute="centerX" secondItem="ig5-Tn-dDn" secondAttribute="centerX" id="J2Z-gz-uNo"/>
                                             <constraint firstItem="Djb-fQ-Tu7" firstAttribute="top" secondItem="VF9-0C-aSg" secondAttribute="bottom" constant="24" id="NRR-UT-o7w"/>
-                                            <constraint firstItem="76k-7N-n88" firstAttribute="top" secondItem="xJO-Vg-Hun" secondAttribute="bottom" constant="2" id="Oep-bo-EGZ"/>
                                             <constraint firstItem="pmX-uz-dkJ" firstAttribute="leading" secondItem="ig5-Tn-dDn" secondAttribute="leading" constant="14" id="Pwx-Lh-cIK"/>
                                             <constraint firstItem="pmX-uz-dkJ" firstAttribute="top" secondItem="1An-Ep-1gI" secondAttribute="bottom" constant="8" symbolic="YES" id="RC1-rJ-th5"/>
                                             <constraint firstItem="Djb-fQ-Tu7" firstAttribute="leading" secondItem="ig5-Tn-dDn" secondAttribute="leading" constant="15" id="SUX-pn-Rdl"/>
@@ -377,9 +373,7 @@
                                             <constraint firstItem="1An-Ep-1gI" firstAttribute="trailing" secondItem="p9V-0X-vsA" secondAttribute="trailing" id="gL8-QA-9ln"/>
                                             <constraint firstItem="xJO-Vg-Hun" firstAttribute="top" secondItem="8jS-tZ-HRu" secondAttribute="bottom" constant="3" id="gaj-dk-Cas"/>
                                             <constraint firstItem="PSg-Yg-vXY" firstAttribute="trailing" secondItem="VF9-0C-aSg" secondAttribute="trailing" id="glf-73-igx"/>
-                                            <constraint firstItem="xfh-Hu-3qQ" firstAttribute="top" secondItem="djh-Ts-SWK" secondAttribute="bottom" constant="5" id="imW-Ui-2vN"/>
                                             <constraint firstItem="Djb-fQ-Tu7" firstAttribute="trailing" secondItem="1An-Ep-1gI" secondAttribute="trailing" id="k3A-zw-nYg"/>
-                                            <constraint firstItem="1An-Ep-1gI" firstAttribute="top" secondItem="76k-7N-n88" secondAttribute="bottom" constant="34" id="mbU-BR-zOu"/>
                                             <constraint firstItem="PSg-Yg-vXY" firstAttribute="leading" secondItem="ig5-Tn-dDn" secondAttribute="leading" id="nL2-rC-Er8"/>
                                             <constraint firstItem="XhE-4y-Yx4" firstAttribute="leading" secondItem="1An-Ep-1gI" secondAttribute="leading" id="ngg-Pi-ofv"/>
                                             <constraint firstItem="8jS-tZ-HRu" firstAttribute="leading" secondItem="xJO-Vg-Hun" secondAttribute="leading" id="nkj-9u-aEP"/>
@@ -390,7 +384,6 @@
                                             <constraint firstItem="PSg-Yg-vXY" firstAttribute="top" secondItem="ig5-Tn-dDn" secondAttribute="top" id="tij-DE-4q6"/>
                                             <constraint firstItem="PSg-Yg-vXY" firstAttribute="leading" secondItem="VF9-0C-aSg" secondAttribute="leading" id="vwN-NX-rUv"/>
                                             <constraint firstItem="djh-Ts-SWK" firstAttribute="top" secondItem="0sC-iE-gaa" secondAttribute="bottom" constant="6" id="xg5-mf-KYB"/>
-                                            <constraint firstItem="76k-7N-n88" firstAttribute="leading" secondItem="xJO-Vg-Hun" secondAttribute="leading" constant="2" id="xnl-Vz-SyL"/>
                                             <constraint firstAttribute="height" constant="944" id="xs0-ob-HTv"/>
                                             <constraint firstItem="M8A-0U-X5Q" firstAttribute="leading" secondItem="nW1-mN-TfK" secondAttribute="trailing" constant="58" id="yAe-w8-1gG"/>
                                             <constraint firstAttribute="trailing" secondItem="PSg-Yg-vXY" secondAttribute="trailing" id="yNQ-fQ-zPb"/>
@@ -428,7 +421,7 @@
                         <outlet property="nameLabel" destination="PSg-Yg-vXY" id="meI-M7-gyy"/>
                         <outlet property="noteView" destination="Djb-fQ-Tu7" id="aHq-pB-82a"/>
                         <outlet property="rangerLineView" destination="xJO-Vg-Hun" id="nfS-P8-GAA"/>
-                        <outlet property="reservationUrlView" destination="76k-7N-n88" id="0Vc-hi-t71"/>
+                        <outlet property="reservationButton" destination="yZl-ng-2ID" id="HTy-ps-jN9"/>
                         <outlet property="viewScroll" destination="ig5-Tn-dDn" id="iyX-tf-Ke3"/>
                     </connections>
                 </viewController>
@@ -655,12 +648,11 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="cTW-h5-RuI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Search">
                                     <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="searchButtonClicked:" destination="BbE-8H-DjH" eventType="touchUpInside" id="MoA-4r-doE"/>
                                     <segue destination="S4R-Ja-viH" kind="show" id="tb9-uY-vpB"/>
                                 </connections>
                             </button>
@@ -676,8 +668,15 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Search" id="o7l-JC-88a"/>
+                    <navigationItem key="navigationItem" title="Search" id="o7l-JC-88a">
+                        <barButtonItem key="rightBarButtonItem" image="Information" id="3f7-G4-qEo">
+                            <connections>
+                                <action selector="aboutButtonClicked:" destination="BbE-8H-DjH" id="kcN-DQ-pgN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="aboutButton" destination="3f7-G4-qEo" id="Qkv-Ca-VgL"/>
                         <outlet property="ampsAvailableSegment" destination="aMS-tk-3aF" id="0Az-RY-9nL"/>
                         <outlet property="cgNameField" destination="vMn-Uh-4Qh" id="4ba-HZ-p6z"/>
                         <outlet property="facilityTypeSegment" destination="v0X-bj-41T" id="Aen-b3-Jvk"/>
@@ -722,5 +721,7 @@
     </scenes>
     <resources>
         <image name="Header" width="317" height="101"/>
+        <image name="Information" width="33" height="33"/>
+        <image name="ReserveAmerica" width="160" height="48"/>
     </resources>
 </document>

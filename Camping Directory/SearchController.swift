@@ -41,9 +41,36 @@ class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDe
     @IBOutlet weak var waterFrontSwitch: UISwitch!
     @IBOutlet weak var ampsAvailableSegment: UISegmentedControl!
     @IBOutlet weak var facilityTypeSegment: UISegmentedControl!
+    @IBOutlet weak var aboutButton: UIBarButtonItem!
     @IBOutlet weak var searchButton: UIButton!
     
-    @IBAction func searchButtonClicked(_ sender: UIButton) {
+    // About Button
+    @IBAction func aboutButtonClicked(_ sender: UIBarButtonItem) {
+        let alertMessage = UIAlertController(title: "Camping Directory", message: "", preferredStyle: .alert)
+        
+        // Application Icon
+        let image = UIImage(named: "AppIcon40x40")
+        
+        let imageView = UIImageView(frame: CGRect(x: 115, y: 48, width: 40, height: 40))
+        imageView.image = image
+        imageView.layer.cornerRadius = 8.0
+        imageView.clipsToBounds = true
+        
+        alertMessage.view.addSubview(imageView)
+        
+        // Application Version
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        
+        // Description
+        var message = "\n\n\nVersion " + version! + "\n\n"
+        message += "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation.\n\nGitHub:  https://github.com/keithrdavis/Camping-Directory\n\nCopyright © 2016 Keith R. Davis"
+        
+        alertMessage.message = message
+        
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertMessage .addAction(action)
+        
+        self.present(alertMessage, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -63,6 +90,8 @@ class SearchController: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         // Defaults
         self.statePicker.selectRow(0, inComponent: 0, animated: true)
         statePickerValue = Constants.stateDictionary[Constants.stateList[statePicker.selectedRow(inComponent: 0)]]!
+        
+        self.searchButton.layer.cornerRadius = 5
     }
     
     override func didReceiveMemoryWarning() {

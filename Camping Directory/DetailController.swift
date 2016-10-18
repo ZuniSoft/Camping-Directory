@@ -36,8 +36,8 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
     var initialLocation: CLLocation?
     var annotation: MKPointAnnotation = MKPointAnnotation()
     var amenities:[Data.AmenityResult] = []
+    var reservationUrl: String?
 
-    
     // Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var detailScroll: UIScrollView!
@@ -48,10 +48,14 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var directLineView: UITextView!
     @IBOutlet weak var rangerLineView: UITextView!
-    @IBOutlet weak var reservationUrlView: UITextView!
+    @IBOutlet weak var reservationButton: UIButton!
     @IBOutlet weak var activeLogoView: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
 
+    // Reservation Button
+    @IBAction func reservationButtonClicked(_ sender: UIButton) {
+        if let url = NSURL(string: reservationUrl!){ UIApplication.shared.open(url as URL, options: [:], completionHandler: nil) }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,18 +168,8 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                             }
                             
                             // Reservation URL
-                            let reservationUrl = elem[index].element?.attribute(by: "reservationUrl")?.text
-                                
-                            let url = Constants.svcCampsiteReservationURL + reservationUrl!
-                            let msg = "Reserve America" as NSString
-                            let range = msg.range(of: "Reserve America")
-                            
-                            let attributedString = NSMutableAttributedString(string: msg as String)
-                            attributedString.addAttribute(NSLinkAttributeName, value: NSURL(string: url)!, range: range)
-                            
-                            self.reservationUrlView.attributedText = attributedString
-                            self.reservationUrlView.font = .systemFont(ofSize: 14)
-                            
+                            let url = elem[index].element?.attribute(by: "reservationUrl")?.text
+                            self.reservationUrl = Constants.svcCampsiteReservationURL + url!
                             
                             // Ammentities
                             for amenity in elem[index]["amenity"].all {
