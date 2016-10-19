@@ -122,11 +122,16 @@ class DetailController: UIViewController, MKMapViewDelegate, UIScrollViewDelegat
                             
                             // Address
                             let street = elem[index]["address"][0].element?.attribute(by: "streetAddress")?.text
+                            
                             let city = elem[index]["address"][0].element?.attribute(by: "city")?.text
-                            let state = elem[index]["address"][0].element?.attribute(by: "state")?.text
+                            
+                            let stateLong = elem[index]["address"][0].element?.attribute(by: "state")?.text
+                            
+                            let state = stateLong != "" ? Constants.stateDictionary[stateLong!] : ""
+                            
                             let zipcode = elem[index]["address"][0].element?.attribute(by: "zip")?.text
                             
-                            var address = street != "" ? street! + ", " : ""
+                            var address = street != "" ? street! + "\n" : ""
                             address += city != "" ? city! + ", " : ""
                             address += state != "" ? state! + " " : ""
                             address += zipcode != "" ? zipcode! : ""
